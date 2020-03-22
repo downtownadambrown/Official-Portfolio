@@ -4,26 +4,26 @@ export const tiles = {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 1,
-            className: "col tile darkgreen",
+            className: "col outerTile darkgreen",
         },
         {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 1,
-            className: "col tile green",
+            className: "col outerTile green",
         },
         {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 1,
-            className: "col tile yellow",
+            className: "col outerTile yellow",
 
         },
         {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 1,
-            className: "col tile red",
+            className: "col outerTile red",
         },
     ],
     row2: [
@@ -31,7 +31,7 @@ export const tiles = {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 2,
-            className: "col tile lightblue",
+            className: "col outerTile lightblue",
         },
         {
             label: "Adams App 1",
@@ -43,7 +43,7 @@ export const tiles = {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 2,
-            className: "col tile lightblue",
+            className: "col outerTile lightblue",
         },
     ],
     row3: [
@@ -51,25 +51,25 @@ export const tiles = {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 3,
-            className: "col tile red",
+            className: "col outerTile red",
         },
         {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 3,
-            className: "col tile yellow",
+            className: "col outerTile yellow",
         },
         {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 3,
-            className: "col tile green",
+            className: "col outerTile green",
         },
         {
             label: "Adams App 1",
             github: "http://www.github.com/downtownadambrown",
             row: 3,
-            className: "col tile darkgreen",
+            className: "col outerTile darkgreen",
         },
     ],
 };

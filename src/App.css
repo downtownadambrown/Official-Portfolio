@@ -1,7 +1,15 @@
+html, body, .root {
+    height: 100%;
+}
+
+.container {
+}
+
 .App {
     text-align: center;
-    background-color: white;
+    background-color: grey;
     color: black;
+    height: 100%;
 }
 
 .header {
@@ -10,38 +18,45 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 2em;
 }
 
-.main-container {
-
+.outerTile {
+    height: 150px;
 }
 
-.tile {
-    height: 75px;
+.innerTile {
+    margin: 0;
+    padding: 0;
     border-radius: 15px;
+    height: 100%;
 }
 
-.darkgreen {
+.test {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.darkgreen .row {
     background-color: #88C5A1;
 }
 
-.green {
+.green .row {
     background-color: #AFD297;
 }
 
-.yellow {
+.yellow .row {
     background-color: #E0E293;
 }
 
-.red {
+.red .row {
     background-color: #E1A18E;
 }
 
-.lightblue {
+.lightblue .row {
     background-color: #CCEEFF;
 }
 
-.blue {
+.blue .row {
     background-color: #CCDDFF;
 }
