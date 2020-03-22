@@ -7,20 +7,20 @@ export const tiles = {
             className: "col outerTile darkgreen",
         },
         {
-            label: "Adams App 1",
+            label: "Adams App 2",
             github: "http://www.github.com/downtownadambrown",
             row: 1,
             className: "col outerTile green",
         },
         {
-            label: "Adams App 1",
+            label: "Adams App 3",
             github: "http://www.github.com/downtownadambrown",
             row: 1,
             className: "col outerTile yellow",
 
         },
         {
-            label: "Adams App 1",
+            label: "Adams App 4",
             github: "http://www.github.com/downtownadambrown",
             row: 1,
             className: "col outerTile red",

@@ -2,7 +2,38 @@ html, body, .root {
     height: 100%;
 }
 
-.container {
+.home {
+    height: 100%;
+    width: 100%;
+    background-color: lightslategray;
+}
+
+.headline {
+    margin: 5px 10px 5px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tile-container {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .tile-container {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .fluid-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .buttonTile {
+        justify-content: center;
+    }
 }
 
 .App {
@@ -22,7 +53,7 @@ html, body, .root {
 }
 
 .outerTile {
-    height: 150px;
+    height: 250px;
 }
 
 .innerTile {
