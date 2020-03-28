@@ -1,5 +1,10 @@
+
 html, body, .root {
     height: 100%;
+}
+
+.introTitle {
+    font-size: 26px;
 }
 
 .home {
@@ -16,6 +21,7 @@ html, body, .root {
 
 .tile-container {
     width: 50%;
+    min-height: 165px;
 }
 
 @media (max-width: 768px) {
@@ -90,4 +96,14 @@ html, body, .root {
 
 .blue .row {
     background-color: #CCDDFF;
+}
+
+.dialog-enter {
+    transform: translateX(-150px);
+    transition: transform 400ms ease-in;
+}
+
+.dialog-enter-active {
+    transform: translateX(-150px);
+    transition: transform 400ms ease-in;
 }
