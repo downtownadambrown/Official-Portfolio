@@ -2,6 +2,10 @@
   "name": "official-portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.8.0",
+    "npm": "6.10.2"
+  },
   "dependencies": {
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
