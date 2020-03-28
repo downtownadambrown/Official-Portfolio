@@ -11,30 +11,31 @@ import { FaRegLightbulb } from "react-icons/fa";
 const Home = () => {
     const ref = useRef([]);
     const [items, set] = useState([]);
-    const tiles = [
-        {
-            icon: <FaTeamspeak className="m-3" size="50px" />,
-            label: "Gamer",
-            delay: 800,
-        },{
-            icon: <DiJsBadge className="m-3" size="50px" />,
-            label: "Coder",
-            delay: 1300,
-        },{
-            icon: <GiF1Car className="m-3" size="50px" />,
-            label: "Engineer",
-            delay: 1800,
-        },{
-            icon: <FaRegLightbulb className="m-3" size="50px" />,
-            label: "Mentor",
-            delay: 2300,
-        }
-    ];
 
     const animatedProps = {
         opacity: 1,
         from: { opacity: 0 },
     };
+
+    const tiles = [
+        {
+            icon: <FaTeamspeak className="m-3" size="50px" />,
+            label: "Gamer",
+            spring: useSpring({ ...animatedProps, delay: 800 }),
+        },{
+            icon: <DiJsBadge className="m-3" size="50px" />,
+            label: "Coder",
+            spring: useSpring({ ...animatedProps, delay: 1300 }),
+        },{
+            icon: <GiF1Car className="m-3" size="50px" />,
+            label: "Engineer",
+            spring: useSpring({ ...animatedProps, delay: 1800 }),
+        },{
+            icon: <FaRegLightbulb className="m-3" size="50px" />,
+            label: "Mentor",
+            spring: useSpring({ ...animatedProps, delay: 2300 }),
+        }
+    ];
 
     const transitions = useTransition(items , null, {
         from: { opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(600px) rotateX(0deg)' },
@@ -53,6 +54,7 @@ const Home = () => {
         ref.current.push(setTimeout(() => set(['Hello.', 'I\'m Adam Brown.']), 750));
     }, []);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => void reset(), []);
 
     return (
@@ -68,7 +70,7 @@ const Home = () => {
                 {tiles.map((tile, index) => (
                     <div className="col-md-6 col-sm-12" key={`${tile.label}-${tile.delay}`}>
                         <div className={`buttonTile d-flex align-items-center ${!(index % 2) ? "flex-md-row-reverse" : ""}`}>
-                            <animated.div style={useSpring({ ...animatedProps, delay: tile.delay })}>
+                            <animated.div style={tile.spring}>
                                 {tile.icon}
                                 <span>{tile.label}</span>
                             </animated.div>
@@ -81,7 +83,7 @@ const Home = () => {
 };
 
 const App = () => {
-    const [currentPage, getCurrentPage] = useState(<Home />);
+    const [currentPage] = useState(<Home />);
 
     return currentPage;
 };
