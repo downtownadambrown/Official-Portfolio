@@ -59,22 +59,24 @@ const Home = () => {
 
     return (
         <div className="home d-flex flex-column align-items-center justify-content-center">
-            <div className="d-flex flex-md-column flex-sm-row align-items-center">
+            <div className="d-flex  align-items-center flex-column">
                 {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
                     <animated.div className="transitions-item" key={key} style={rest}>
-                        <animated.div style={{ overflow: 'hidden', height: innerHeight }} className="introTitle">{item}</animated.div>
+                        <animated.div style={{ overflow: 'hidden', height: innerHeight, flexDirection: "column" }} className="introTitle">{item}</animated.div>
                     </animated.div>
                 ))}
             </div>
             <div className="fluid-container row tile-container">
                 {tiles.map((tile, index) => (
                     <div className="col-md-6 col-sm-12" key={`${tile.label}-${tile.delay}`}>
-                        <div className={`buttonTile d-flex align-items-center ${!(index % 2) ? "flex-md-row-reverse" : ""}`}>
-                            <animated.div style={tile.spring}>
-                                {tile.icon}
-                                <span>{tile.label}</span>
-                            </animated.div>
-                        </div>
+                        <animated.div style={tile.spring} className="">
+                            <div className="buttonTile">
+                                    <div className={`${!(index % 2) ? "flex-md-row-reverse" : ""} d-flex align-items-center`}>
+                                        {tile.icon}
+                                        <span>{tile.label}</span>
+                                    </div>
+                            </div>
+                        </animated.div>
                     </div>
                 ))}
             </div>
