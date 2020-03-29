@@ -61,7 +61,7 @@ const Home = () => {
         <div className="home d-flex flex-column align-items-center justify-content-center">
             <div className="d-flex flex-md-column flex-sm-row align-items-center">
                 {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
-                    <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
+                    <animated.div className="transitions-item" key={key} style={rest}>
                         <animated.div style={{ overflow: 'hidden', height: innerHeight }} className="introTitle">{item}</animated.div>
                     </animated.div>
                 ))}
