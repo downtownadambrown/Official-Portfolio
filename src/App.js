@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
-
 
 import { useSpring, useTransition, animated, config } from 'react-spring';
 
@@ -9,11 +8,24 @@ import { DiJsBadge } from "react-icons/di";
 import { GiF1Car } from "react-icons/gi";
 import { FaRegLightbulb } from "react-icons/fa";
 
-const Home = () => {
+import Fab from '@material-ui/core/Fab';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useLocation,
+    useHistory,
+} from "react-router-dom";
+
+const Intro = () => {
+    let history = useHistory();
     const ref = useRef([]);
     const [items, set] = useState([]);
 
-    const animatedProps = {
+    const fadeInProps = {
         opacity: 1,
         from: {
             opacity: 0
@@ -46,28 +58,28 @@ const Home = () => {
             icon: <FaTeamspeak className="m-3" size="50px" />,
             label: "Gamer",
             springs: [
-                useSpring({ ...animatedProps, delay: 800 }),
+                useSpring({ ...fadeInProps, delay: 800 }),
                 useSpring({ ...secondAnimatedProps.left, delay: 2400 }),
             ]
         },{
             icon: <DiJsBadge className="m-3" size="50px" />,
             label: "Coder",
             springs: [
-                useSpring({ ...animatedProps, delay: 1200 }),
+                useSpring({ ...fadeInProps, delay: 1200 }),
                 useSpring({ ...secondAnimatedProps.right, delay: 2400 }),
             ],
         },{
             icon: <GiF1Car className="m-3" size="50px" />,
             label: "Engineer",
             springs: [
-                useSpring({ ...animatedProps, delay: 1600 }),
+                useSpring({ ...fadeInProps, delay: 1600 }),
                 useSpring({ ...secondAnimatedProps.left, delay: 2600 }),
             ],
         },{
             icon: <FaRegLightbulb className="m-3" size="50px" />,
             label: "Mentor",
             springs: [
-                useSpring({ ...animatedProps, delay: 2000 }),
+                useSpring({ ...fadeInProps, delay: 2000 }),
                 useSpring({ ...secondAnimatedProps.right, delay: 2600 })
             ]
         }
@@ -82,6 +94,15 @@ const Home = () => {
         leave: [{ color: '#c23369' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
     });
 
+    const iconAnimatedProps = {
+        ...fadeInProps,
+        from: {
+            ...fadeInProps.from,
+        }
+    };
+
+    const iconSpring = useSpring({ ...iconAnimatedProps, delay: 3000 });
+
     useEffect(() => {
         ref.current.map(clearTimeout);
         ref.current = [];
@@ -90,6 +111,11 @@ const Home = () => {
         ref.current.push(setTimeout(() => set(['Hello.', 'I\'m Adam Brown.']), 750));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const handleClick = useCallback((e) => {
+        e.preventDefault();
+        history.push('/home');
+    }, [history]);
 
     return (
         <div className="home d-flex flex-column align-items-center justify-content-center">
@@ -116,14 +142,49 @@ const Home = () => {
                     </div>
                 ))}
             </div>
+            <animated.div style={iconSpring}>
+                <Fab color="default" tabIndex={-1} onClick={handleClick}>
+                    <ArrowForwardIosIcon />
+                </Fab>
+            </animated.div>
         </div>
     );
 };
 
-const App = () => {
-    const [currentPage] = useState(<Home />);
-
-    return currentPage;
+const Home = () => {
+    return (
+        <div>
+            <h2>Home!</h2>
+        </div>
+    );
 };
+
+const AppRouter = () => {
+
+    const location = useLocation();
+    const transitions = useTransition(location, location => location.pathname, {
+        from: { opacity: 0, transform: 'translate3d(0%,0,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+    });
+    return transitions.map(({ item: location, props, key }) => (
+        <animated.div key={key} style={props} className="home">
+            <Switch location={location}>
+                <Route path="/" exact>
+                    <Intro />
+                </Route>
+                <Route path="/home">
+                    <Home />
+                </Route>
+            </Switch>
+        </animated.div>
+    ));
+};
+
+const App = () => (
+    <Router>
+        <AppRouter />
+    </Router>
+);
 
 export default App;
