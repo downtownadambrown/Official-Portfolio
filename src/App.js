@@ -119,7 +119,7 @@ const Intro = () => {
 
     return (
         <div className="home d-flex flex-column align-items-center justify-content-center">
-            <div className="d-flex  align-items-center flex-column">
+            <div className="d-flex align-items-center flex-column">
                 {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
                     <animated.div className="transitions-item" key={key} style={rest}>
                         <animated.div style={{ overflow: 'hidden', height: innerHeight, flexDirection: "column" }} className="introTitle">{item}</animated.div>
@@ -168,7 +168,7 @@ const AppRouter = () => {
         leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
     });
     return transitions.map(({ item: location, props, key }) => (
-        <animated.div key={key} style={props} className="home">
+        <animated.div key={key} style={props} className="app">
             <Switch location={location}>
                 <Route path="/" exact>
                     <Intro />

@@ -7,11 +7,17 @@ html, body, .root {
     font-size: 26px;
 }
 
+.app {
+    color: rgb(183, 183, 183);
+    background-color: rgb(54, 61, 69);
+    height: 100%;
+    width: 100%;
+}
+
 .home {
     height: 100%;
     width: 100%;
-    color: rgb(183, 183, 183);
-    background-color: rgb(54, 61, 69);
+    overflow: hidden;
 }
 
 .headline {
