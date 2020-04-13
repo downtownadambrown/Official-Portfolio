@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
 
-import { useSpring, useTransition, animated, config } from 'react-spring';
+import { useSpring, useTransition, useTrail, animated, config } from 'react-spring';
 
 import { FaTeamspeak } from "react-icons/fa";
 import { DiJsBadge } from "react-icons/di";
@@ -15,15 +15,17 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
     useLocation,
     useHistory,
 } from "react-router-dom";
+
+import Home from './Home';
 
 const Intro = () => {
     let history = useHistory();
     const ref = useRef([]);
     const [items, set] = useState([]);
+    const [showItems, setShowItems] = useState(true);
 
     const fadeInProps = {
         opacity: 1,
@@ -114,47 +116,65 @@ const Intro = () => {
 
     const handleClick = useCallback((e) => {
         e.preventDefault();
-        history.push('/home');
+        setShowItems(false);
+        setTimeout(() => history.push('/home'), 800)
+        //history.push('/home');
     }, [history]);
 
-    return (
-        <div className="home d-flex flex-column align-items-center justify-content-center">
-            <div className="d-flex align-items-center flex-column">
-                {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
-                    <animated.div className="transitions-item" key={key} style={rest}>
-                        <animated.div style={{ overflow: 'hidden', height: innerHeight, flexDirection: "column" }} className="introTitle">{item}</animated.div>
-                    </animated.div>
-                ))}
-            </div>
-            <div className="fluid-container row tile-container">
-                {tiles.map((tile, index) => (
-                    <div className="col-md-6 col-sm-12" key={`${tile.label}-${tile.delay}`}>
-                        <animated.div style={tile.springs[0]} className="">
-                            <div className="buttonTile">
-                                <div className={`${!(index % 2) ? "flex-md-row-reverse" : ""} d-flex align-items-center`}>
-                                    {tile.icon}
-                                    <animated.div style={tile.springs[1]}>
-                                        <span>{tile.label}</span>
-                                    </animated.div>
-                                </div>
-                            </div>
-                        </animated.div>
-                    </div>
-                ))}
-            </div>
-            <animated.div style={iconSpring}>
-                <Fab color="default" tabIndex={-1} onClick={handleClick}>
-                    <ArrowForwardIosIcon />
-                </Fab>
-            </animated.div>
+    const introContent = [(
+        <div className="d-flex align-items-center flex-column">
+            {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
+                <animated.div className="transitions-item" key={key} style={rest}>
+                    <animated.div style={{ overflow: 'hidden', height: innerHeight, flexDirection: "column" }} className="introTitle">{item}</animated.div>
+                </animated.div>
+            ))}
         </div>
-    );
-};
+    ),(
+        <div className="fluid-container row tile-container">
+            {tiles.map((tile, index) => (
+                <div className="col-md-6 col-sm-12" key={`${tile.label}-${tile.delay}`}>
+                    <animated.div style={tile.springs[0]} className="">
+                        <div className="buttonTile">
+                            <div className={`${!(index % 2) ? "flex-md-row-reverse" : ""} d-flex align-items-center`}>
+                                {tile.icon}
+                                <animated.div style={tile.springs[1]}>
+                                    <span>{tile.label}</span>
+                                </animated.div>
+                            </div>
+                        </div>
+                    </animated.div>
+                </div>
+            ))}
+        </div>
+    ),(
+        <animated.div style={iconSpring}>
+            <Fab color="default" tabIndex={-1} onClick={handleClick}>
+                <ArrowForwardIosIcon />
+            </Fab>
+        </animated.div>
+    )];
 
-const Home = () => {
+    const fadeConfig = { mass: 5, tension: 2000, friction: 200 };
+
+    const fadeOut = useTrail(introContent.length, {
+        config: fadeConfig,
+        opacity: showItems ? 1 : 0,
+        x: showItems ? 0 : 20,
+        height: showItems ? 80 : 0,
+        from: { opacity: 0, x: 20, height: 0 },
+    });
+
     return (
-        <div>
-            <h2>Home!</h2>
+        <div className="intro d-flex flex-column align-items-center justify-content-center">
+            {fadeOut.map(({ x, height, ...rest }, index) =>
+                (<animated.div
+                    key={index}
+                    className="trails-text d-flex flex-column align-items-center"
+                    style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`), delay: (1100*(index+1)) }}
+                >
+                        {introContent[index]}
+                </animated.div>
+            ))}
         </div>
     );
 };
@@ -162,13 +182,9 @@ const Home = () => {
 const AppRouter = () => {
 
     const location = useLocation();
-    const transitions = useTransition(location, location => location.pathname, {
-        from: { opacity: 0, transform: 'translate3d(0%,0,0)' },
-        enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-        leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
-    });
-    return transitions.map(({ item: location, props, key }) => (
-        <animated.div key={key} style={props} className="app">
+
+    return (
+        <div className="app">
             <Switch location={location}>
                 <Route path="/" exact>
                     <Intro />
@@ -177,8 +193,8 @@ const AppRouter = () => {
                     <Home />
                 </Route>
             </Switch>
-        </animated.div>
-    ));
+        </div>
+    );
 };
 
 const App = () => (

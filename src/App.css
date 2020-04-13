@@ -14,10 +14,36 @@ html, body, .root {
     width: 100%;
 }
 
-.home {
+.intro {
     height: 100%;
     width: 100%;
     overflow: hidden;
+}
+
+.movingDiv {
+    width: 100%;
+}
+
+.appBar {
+    z-index: 100;
+}
+
+.drawer {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.drawerPaper {
+    width: 240px;
+}
+
+.drawerContainer {
+    overflow: auto;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 12px;
 }
 
 .headline {

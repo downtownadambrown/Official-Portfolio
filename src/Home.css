@@ -1,0 +1,30 @@
+.script-bf-box {
+    width: 200px;
+    height: 50px;
+    background: black;
+    margin: 5px;
+    padding: 8px 16px 8px 16px;
+    will-change: transform;
+
+}
+
+.script-bf-box:hover {
+    background: grey;
+    color: black;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
