@@ -7,6 +7,7 @@ import { FaTeamspeak } from "react-icons/fa";
 import { DiJsBadge } from "react-icons/di";
 import { GiF1Car } from "react-icons/gi";
 import { FaRegLightbulb } from "react-icons/fa";
+import { AiOutlineTool } from "react-icons/ai";
 
 import Fab from '@material-ui/core/Fab';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
@@ -71,7 +72,7 @@ const Intro = () => {
                 useSpring({ ...secondAnimatedProps.right, delay: 2400 }),
             ],
         },{
-            icon: <GiF1Car className="m-3" size="50px" />,
+            icon: <AiOutlineTool className="m-3" size="50px" />,
             label: "Engineer",
             springs: [
                 useSpring({ ...fadeInProps, delay: 1600 }),
