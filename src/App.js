@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './App.css';
-
+import Sidebar from './Sidebar';
+import TabPanel from './TabPanel';
 import { useSpring, useTransition, useTrail, animated, config } from 'react-spring';
 
 import { FaTeamspeak } from "react-icons/fa";
 import { DiJsBadge } from "react-icons/di";
-import { GiF1Car } from "react-icons/gi";
 import { FaRegLightbulb } from "react-icons/fa";
 import { AiOutlineTool } from "react-icons/ai";
 
@@ -149,7 +149,7 @@ const Intro = () => {
         </div>
     ),(
         <animated.div style={iconSpring}>
-            <Fab color="default" tabIndex={-1} onClick={handleClick}>
+            <Fab tabIndex={-1} onClick={handleClick} style={{ backgroundColor: 'rgb(183, 183, 183)'}}>
                 <ArrowForwardIosIcon />
             </Fab>
         </animated.div>
@@ -191,6 +191,13 @@ const AppRouter = () => {
                     <Intro />
                 </Route>
                 <Route path="/home">
+                    <Sidebar
+                        anchor="left"
+                    />
+                    <Home />
+                </Route>
+                <Route path="/test">
+                    <TabPanel />
                     <Home />
                 </Route>
             </Switch>
