@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import Drawer from "@material-ui/core/Drawer/Drawer";
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -16,7 +16,7 @@ const Sidebar = ({
 }) => {
     const [drawer, setDrawer] = useState(defaultOpen);
 
-    const toggleDrawer = (event) => {
+    const toggleDrawer = useCallback((event) => {
         event.stopPropagation();
         event.preventDefault();
 
@@ -24,7 +24,7 @@ const Sidebar = ({
             return;
         }
         setDrawer(!drawer);
-    };
+    }, [setDrawer, drawer]);
 
     const list = () => (
         <div
