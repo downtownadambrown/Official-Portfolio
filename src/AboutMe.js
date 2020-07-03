@@ -2,21 +2,8 @@ import React from 'react';
 import './AboutMe.css';
 import adamImage from './static/adam.jpg';
 import HowCanIHelp from './HowCanIHelp';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-    },
-}));
 
 const AboutMe = () => {
-    const classes = useStyles();
     return (
         <React.Fragment>
             <div className="container d-flex flex-column align-items-center">

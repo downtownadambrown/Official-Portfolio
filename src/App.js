@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './App.css';
 import TabPanel from './TabPanel';
 import Intro from './Intro';
