@@ -55,6 +55,8 @@
     width: 324px;
     height: 243px;
     align-self: flex-start;
+    border-radius: 15px;
+
 }
 
 .text-block {
