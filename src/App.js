@@ -10,8 +10,6 @@ import {
     useLocation,
 } from "react-router-dom";
 
-import Home from './AboutMe';
-
 const AppRouter = () => {
     const location = useLocation();
 
