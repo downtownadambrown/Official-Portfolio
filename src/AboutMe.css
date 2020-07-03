@@ -49,3 +49,25 @@
     z-index: 1;
     transform: translateY(50%);
 }
+
+.adam-image {
+    box-shadow: 5px 5px 20px;
+    width: 324px;
+    height: 243px;
+    align-self: flex-start;
+}
+
+.text-block {
+    margin: 0 20px 0 20px;
+    width: 100%;
+}
+
+.normal-font {
+    font-size: 16px;
+}
+
+.im-a-button {
+    margin: 5px !important;
+}
+
+
