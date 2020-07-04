@@ -98,7 +98,7 @@ const ContactMe = () => {
             }
         }
     };
-    
+
     return (
         <div className="container text-secondary d-flex flex-column justify-content-center align-items-center">
             <h3 className="font-weight-bold">Let's connect and chat!</h3>
