@@ -1,9 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import AboutMe from './AboutMe';
 
@@ -22,7 +20,7 @@ const Panel = ({
     >
         {value === index && (
             <Box p={3}>
-                <Typography>{children}</Typography>
+                <span>{children}</span>
             </Box>
         )}
     </div>
@@ -33,33 +31,7 @@ const buildProps = (index) => ({
     'aria-controls': `simple-tabpanel-${index}`,
 });
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.paper,
-        height: '100%',
-        '&:focus': {
-            opacity: 5,
-        },
-        'button:focus': 'none',
-    },
-    tabs: {
-        backgroundColor: '#555555',
-    },
-    indicator: {
-        display: 'flex',
-        justifyContent: 'center',
-        backgroundColor: 'transparent',
-        '& > span': {
-            maxWidth: 40,
-            width: '100%',
-            backgroundColor: '#635ee7',
-        },
-    },
-}));
-
 const TabPanel = () => {
-    const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -67,17 +39,17 @@ const TabPanel = () => {
     };
 
     return (
-        <div className={classes.root}>
+        <div className="bg-light h-100">
             <AppBar position="static">
                 <Tabs
                     centered
-                    className={classes.tabs}
+                    className="bg-secondary"
                     value={value}
                     onChange={handleChange}
                     aria-label="tabs"
                     TabIndicatorProps={{
                         style: {
-                            backgroundColor: 'grey',
+                            backgroundColor: 'white',
                             height: 5,
                         }
                     }}
