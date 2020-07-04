@@ -5,6 +5,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Chip from '@material-ui/core/Chip';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const HowCanIHelp = () => {
     const [accordion, setAccordion] = useState(null);
@@ -70,8 +71,10 @@ const HowCanIHelp = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                     <div className="text-secondary">
-                        <p>Please feel free to connect with me on LinkedIn!  I highly appreciate staying in touch with hiring managers and helping wherever I can.  I know a lot of people in the Atlanta and nearby areas, so I am happy to refer people if possible.</p>
-                        <p>Any professional inquiries are best sent via email and I will respond as soon as I can.</p>
+                        <p>Please connect with me on LinkedIn!</p>
+                        <p>Feel free to browse my <Chip size="small" label="Projects" color="#6c757d" /> section at the top as well as my Github <GitHubIcon /></p>
+                        <p>I highly appreciate staying in touch with hiring managers and helping wherever I can.  I know a lot of people in the Atlanta and nearby areas, so I am happy to refer people if possible.  I've also helped numerous hiring managers figure out why they were struggling to find the right candidate!  Ask me about it!</p>
+                        <p>Any professional career or consulting inquiries are best sent via the <Chip size="small" label="Contact Me" color="#6c757d" /> tab at the top.  I respond to all inquiries within 1-2 business days.</p>
                     </div>
                 </AccordionDetails>
             </Accordion>
