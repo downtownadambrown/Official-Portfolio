@@ -32,7 +32,7 @@ const HowCanIHelp = () => {
                 <AccordionDetails>
                     <div className="text-secondary">
                         <p>Welcome!  You are the main reason made this site!</p>
-                        <p>Check out the <Chip size="small" label="For Engineers" color="#6c757d" /> tab in the top menu where I plan to post a lot of content related to finding a job in technology, how to get started learning, and more.  This is helpful for any level of experience.</p>
+                        <span>Check out the <Chip size="small" label="For Engineers" /> tab in the top menu where I plan to post a lot of content related to finding a job in technology, how to get started learning, and more.  This is helpful for any level of experience.</span>
                         <p>I look forward to any questions you may have, opinions, and comments in general.  Feel free to connect with me on LinkedIn as well as visit my Github for ideas and discussion!</p>
                     </div>
                 </AccordionDetails>
@@ -72,9 +72,9 @@ const HowCanIHelp = () => {
                 <AccordionDetails>
                     <div className="text-secondary">
                         <p>Please connect with me on LinkedIn!</p>
-                        <p>Feel free to browse my <Chip size="small" label="Projects" color="#6c757d" /> section at the top as well as my Github <GitHubIcon /></p>
+                        <span>Feel free to browse my <Chip size="small" label="Projects" /> section at the top as well as my Github <GitHubIcon /></span>
                         <p>I highly appreciate staying in touch with hiring managers and helping wherever I can.  I know a lot of people in the Atlanta and nearby areas, so I am happy to refer people if possible.  I've also helped numerous hiring managers figure out why they were struggling to find the right candidate!  Ask me about it!</p>
-                        <p>Any professional career or consulting inquiries are best sent via the <Chip size="small" label="Contact Me" color="#6c757d" /> tab at the top.  I respond to all inquiries within 1-2 business days.</p>
+                        <span>Any professional career or consulting inquiries are best sent via the <Chip size="small" label="Contact Me" /> tab at the top.  I respond to all inquiries within 1-2 business days.</span>
                     </div>
                 </AccordionDetails>
             </Accordion>
