@@ -99,7 +99,7 @@ const ContactMe = (props) => {
                         label="Your Email"
                     />
                     <FormControl className="col-3 mt-3">
-                        <InputLabel htmlFor="formatted-text-mask-input">Your Best Contact Number</InputLabel>
+                        <InputLabel htmlFor="formatted-text-mask-input">Your Number</InputLabel>
                         <Input
                             value={values.textmask}
                             onChange={handleChangePhone}
