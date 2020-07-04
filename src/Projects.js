@@ -18,36 +18,34 @@ const useStyles = makeStyles({
     },
 });
 
+const renderFooterChildren = (footerChildren) => {
+    if (Array.isArray(footerChildren)) {
+        return footerChildren.map(({ props, label, icon }) => (
+            <React.Fragment key={label}>
+                <Button {...props} >
+                    {label}
+                    {icon}
+                </Button>
+            </React.Fragment>
+        ));
+    } else if (typeof footerChildren === 'object') {
+        return (
+            <React.Fragment key={footerChildren.label}>
+                <Button {...footerChildren.props} >
+                    {footerChildren.label}
+                    {footerChildren.icon}
+                </Button>
+            </React.Fragment>
+        )
+    }
+};
+
 const ProjectCard = ({
     title,
     description,
     footerChildren,
 }) => {
     const classes = useStyles();
-
-    console.log("footerChildren: ", footerChildren);
-
-    const renderFooterChildren = (footerChildren) => {
-        if (Array.isArray(footerChildren)) {
-            return footerChildren.map(({ props, label, icon }) => (
-                <React.Fragment key={label}>
-                    <Button {...props} >
-                        {label}
-                        {icon}
-                    </Button>
-                </React.Fragment>
-            ));
-        } else if (typeof footerChildren === 'object') {
-            return (
-                <React.Fragment key={footerChildren.label}>
-                    <Button {...footerChildren.props} >
-                        {footerChildren.label}
-                        {footerChildren.icon}
-                    </Button>
-                </React.Fragment>
-            )
-        }
-    };
 
     return (
         <Card className={classes.root}>
