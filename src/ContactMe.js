@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
@@ -55,7 +57,11 @@ const ContactMe = (props) => {
     };
 
     const handleSubmit = (event) => {
-
+        const formData = {
+            test: true,
+            name: 'Adam'
+        };
+        // emailjs.send('gmail', 'contact_template', formData, 'user_1m3JMAJuHz9got3koYl3R');
     };
 
     return (
