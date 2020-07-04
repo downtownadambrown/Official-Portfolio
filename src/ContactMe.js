@@ -12,6 +12,8 @@ import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 
+const isEmailingEnabled = false; // feature flag for emailing to actually fire
+
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
@@ -61,7 +63,9 @@ const ContactMe = (props) => {
             test: true,
             name: 'Adam'
         };
-        // emailjs.send('gmail', 'contact_template', formData, 'user_1m3JMAJuHz9got3koYl3R');
+        if (isEmailingEnabled) {
+            emailjs.send('gmail', 'contact_template', formData, 'user_1m3JMAJuHz9got3koYl3R');
+        }
     };
 
     return (
