@@ -5,6 +5,9 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import AboutMe from './AboutMe';
 import ContactMe from './ContactMe';
+import Projects from './Projects';
+import LifeStory from './LifeStory';
+import Engineers from './Engineers';
 
 const Panel = ({
     children,
@@ -66,13 +69,13 @@ const TabPanel = () => {
                 <AboutMe />
             </Panel>
             <Panel value={value} index={1}>
-                My Life Story
+                <LifeStory />
             </Panel>
             <Panel value={value} index={2}>
-                Projects
+                <Projects />
             </Panel>
             <Panel value={value} index={3}>
-                For Engineers
+                <Engineers />
             </Panel>
             <Panel value={value} index={4}>
                 <ContactMe />

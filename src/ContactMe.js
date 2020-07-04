@@ -60,7 +60,6 @@ const ContactMe = () => {
 
     const handleChange = (event) => {
         const { target: { value, name }} = event;
-        console.log({ name, value });
         switch (name) {
             case "contact-reason-dropdown":
                 setReason(value);
@@ -99,9 +98,7 @@ const ContactMe = () => {
             }
         }
     };
-
-    console.log({ isFormValid });
-
+    
     return (
         <div className="container text-secondary d-flex flex-column justify-content-center align-items-center">
             <h3 className="font-weight-bold">Let's connect and chat!</h3>
