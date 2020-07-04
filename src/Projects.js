@@ -38,6 +38,7 @@ const renderFooterChildren = (footerChildren) => {
             </React.Fragment>
         )
     }
+    return null;
 };
 
 const ProjectCard = ({
