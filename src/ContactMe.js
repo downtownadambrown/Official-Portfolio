@@ -53,10 +53,7 @@ const ContactMe = () => {
         numberformat: '1320',
     });
 
-    const isFormValid = (reason !== '')
-                        && email !== ''
-                        && name !== ''
-                        && comments !== '';
+    const isFormValid = (reason !== '') && (email !== '') && (name !== '') && (comments !== '');
 
     const handleChange = (event) => {
         const { target: { value, name }} = event;
