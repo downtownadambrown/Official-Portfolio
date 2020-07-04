@@ -104,41 +104,6 @@ const HowCanIHelp = () => {
             </Accordion>
         </div>
     )
-
-/*    return (
-        <div className="d-flex mt-3 flex-column align-items-center">
-            <h4>How can I help?</h4>
-            <div className="container d-flex flex-grow-1 mt-3 justify-content-center">
-                <Button
-                    color="grey"
-                    variant="contained"
-                    className="im-a-button"
-                    onClick={(e) => handleClick(e, 'engineer')}
-                >
-                    I'm an Engineer
-                </Button>
-                <Button
-                    color="grey"
-                    variant="contained"
-                    className="im-a-button"
-                    onClick={(e) => handleClick(e, 'recruiter')}
-                >
-                    I'm a Recruiter
-                </Button>
-                <Button
-                    color="grey"
-                    variant="contained"
-                    className="im-a-button"
-                    onClick={(e) => handleClick(e, 'manager')}
-                >
-                    I'm a Hiring Manager
-                </Button>
-            </div>
-            <div className="container mt-3">
-                <Content content={content} />
-            </div>
-        </div>
-    )*/
 };
 
 export default HowCanIHelp;
