@@ -32,7 +32,7 @@ const HowCanIHelp = () => {
                 <AccordionDetails>
                     <div className="text-secondary">
                         <p>Welcome!  You are the main reason made this site!</p>
-                        <p>Check out the <Chip size="small" label="Get Hired" color="#6c757d" /> tab in the top menu where I plan to post a lot of content related to finding a job.  This is helpful for any level of experience.</p>
+                        <p>Check out the <Chip size="small" label="For Engineers" color="#6c757d" /> tab in the top menu where I plan to post a lot of content related to finding a job in technology, how to get started learning, and more.  This is helpful for any level of experience.</p>
                         <p>I look forward to any questions you may have, opinions, and comments in general.  Feel free to connect with me on LinkedIn as well as visit my Github for ideas and discussion!</p>
                     </div>
                 </AccordionDetails>
