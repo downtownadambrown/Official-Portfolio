@@ -99,6 +99,7 @@ const ContactMe = () => {
         }
     };
 
+    console.log({ isFormValid });
 
     return (
         <div className="container text-secondary d-flex flex-column justify-content-center align-items-center">
@@ -168,6 +169,7 @@ const ContactMe = () => {
                 </FormControl>
                 <div className="mt-3">
                     <Button
+                        disabled={!isFormValid}
                         variant="contained"
                         endIcon={<SendIcon />}
                         onClick={handleSubmit}
