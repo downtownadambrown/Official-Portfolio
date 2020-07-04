@@ -4,6 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import AboutMe from './AboutMe';
+import ContactMe from './ContactMe';
 
 const Panel = ({
     children,
@@ -74,7 +75,7 @@ const TabPanel = () => {
                 Get Hired
             </Panel>
             <Panel value={value} index={5}>
-                Contact Me
+                <ContactMe />
             </Panel>
         </div>
     );
