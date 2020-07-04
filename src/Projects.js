@@ -88,7 +88,7 @@ const TabPanel = (props) => {
         >
             {value === index && (
                 <Box p={3}>
-                    <Typography>{children}</Typography>
+                    <Typography component="span">{children}</Typography>
                 </Box>
             )}
         </div>
@@ -104,7 +104,7 @@ const AppProjects = () => {
         },
         icon: null,
     }];
-    
+
     return (
         <ProjectCard
             footerChildren={footerChildren}
@@ -144,12 +144,6 @@ const Projects = (props) => {
             <TabPanel value={value} index={2}>
                 Item 3
             </TabPanel>
-        </div>
-    );
-
-    return (
-        <div>
-
         </div>
     );
 };
