@@ -79,6 +79,7 @@ const ContactMe = () => {
                 break;
             case "comments-input":
                 setComments(value);
+                break;
             default:
                 return;
         }
