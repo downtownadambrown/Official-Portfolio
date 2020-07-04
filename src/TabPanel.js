@@ -59,7 +59,7 @@ const TabPanel = () => {
                     <Tab label="My Story" {...buildProps(1)} />
                     <Tab label="Projects" {...buildProps(2)} />
                     <Tab label="Get Hired" {...buildProps(3)} />
-                    <Tab label="Contact Me" {...buildProps(3)} />
+                    <Tab label="Contact Me" {...buildProps(4)} />
                 </Tabs>
             </AppBar>
             <Panel value={value} index={0}>
@@ -71,10 +71,10 @@ const TabPanel = () => {
             <Panel value={value} index={2}>
                 Projects
             </Panel>
-            <Panel value={value} index={4}>
+            <Panel value={value} index={3}>
                 Get Hired
             </Panel>
-            <Panel value={value} index={5}>
+            <Panel value={value} index={4}>
                 <ContactMe />
             </Panel>
         </div>
