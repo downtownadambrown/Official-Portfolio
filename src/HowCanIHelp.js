@@ -6,33 +6,6 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Chip from '@material-ui/core/Chip';
 
-const Content = ({ content }) => {
-    switch (content) {
-        case 'recruiter':
-            return (
-                <React.Fragment>
-                    <p>I worked for 5 years as a recruiter and love connecting with other hiring professionals to talk about strategy, engineering, or simply networking!</p>
-                    <p>If you are looking to talk to me about potential opportunities in engineering, I am only open to side contract opportunities and consulting positions at this time.</p>
-                    <p>Stay tuned with me -- I am going to be adding a Recruiting Strategies section to this site which can help recruiters find candidates using modern approaches.  These tips helped me hire ~40 engineers per year consistently!  If you want to get there yourself and have a question in the meantime, please feel free to email me.</p>
-                </React.Fragment>
-            );
-        case 'manager':
-            return (
-                <React.Fragment>
-                    manager
-                </React.Fragment>
-            );
-        case 'engineer':
-            return (
-                <React.Fragment>
-                    engineer
-                </React.Fragment>
-            );
-        default:
-            return null;
-    }
-};
-
 const HowCanIHelp = () => {
     const [accordion, setAccordion] = useState(null);
 
