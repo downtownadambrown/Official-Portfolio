@@ -41,7 +41,7 @@ function TextMaskCustom(props) {
     );
 }
 
-const ContactMe = (props) => {
+const ContactMe = () => {
     const classes = useStyles();
 
     const [reason, setReason] = useState('');
@@ -84,7 +84,7 @@ const ContactMe = (props) => {
         }
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = () => {
         if (isFormValid) {
             const formData = {
                 name,
