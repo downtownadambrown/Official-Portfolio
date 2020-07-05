@@ -11,6 +11,8 @@ import MaskedInput from 'react-text-mask';
 import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
+import {animated, useTrail} from "react-spring";
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
 const isEmailingEnabled = false; // feature flag for emailing to actually fire
 
@@ -43,6 +45,8 @@ function TextMaskCustom(props) {
 
 const ContactMe = () => {
     const classes = useStyles();
+    const [showItems, setShowItems] = useState(true);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const [reason, setReason] = useState('');
     const [email, setEmail] = useState('');
@@ -93,85 +97,138 @@ const ContactMe = () => {
             if (isEmailingEnabled) {
                 emailjs.send('gmail', 'contact_template', formData, 'user_1m3JMAJuHz9got3koYl3R');
             }
+            setShowItems(false);
+            setShowSuccess(true);
         }
     };
 
+    const contactMeContent = [(
+        <h3 className="font-weight-bold">Let's connect and chat!</h3>
+    ),(
+        <FormControl required variant="outlined" className={classes.formControl}>
+            <InputLabel id="demo-simple-select-outlined-label">Reason for contacting</InputLabel>
+            <Select
+                required
+                labelId="demo-simple-select-outlined-label"
+                id="demo-simple-select-outlined"
+                name="contact-reason-dropdown"
+                value={reason}
+                onChange={handleChange}
+                label="Reason for contacting"
+            >
+                <MenuItem value="recruiter">I'm looking to network as a Recruiter</MenuItem>
+                <MenuItem value="opportunity">I'm interested in discussing a career or business opportunity</MenuItem>
+                <MenuItem value="engineer">I have questions as an Engineer</MenuItem>
+                <MenuItem value="other">Other</MenuItem>
+            </Select>
+        </FormControl>
+    ),(
+        <TextField
+            required
+            name="name-input"
+            onChange={handleChange}
+            className="col-9 mt-3"
+            id="standard-basic"
+            label="Your Name"
+            value={name}
+        />
+    ), (
+        <div className="d-flex col-9 p-0 align-items-between justify-content-between">
+            <TextField
+                required
+                name="email-input"
+                onChange={handleChange}
+                className="col-9 mt-3 pr-3"
+                id="email-input"
+                label="Your Email"
+                value={email}
+            />
+            <FormControl className="col-3 mt-3">
+                <InputLabel htmlFor="formatted-text-mask-input">Your Number</InputLabel>
+                <Input
+                    onChange={handleChange}
+                    name="phone-number-input"
+                    id="formatted-text-mask-input"
+                    inputComponent={TextMaskCustom}
+                />
+            </FormControl>
+        </div>
+    ), (
+        <FormControl
+            className="d-flex mt-3 col-9 align-items-center"
+            style={{ minHeight: 130 }} /* TODO: Remove in-line styling */
+        >
+            <TextField
+                required
+                className="w-100"
+                id="comments-input"
+                label="Comments / Questions / Feedback"
+                multiline
+                rowsMax={5}
+                name="comments-input"
+                onChange={handleChange}
+                value={comments}
+            />
+        </FormControl>
+    ), (
+        <Button
+            className="mt-3"
+            disabled={!isFormValid}
+            variant="contained"
+            endIcon={<SendIcon />}
+            onClick={handleSubmit}
+        >
+            Send
+        </Button>
+    )];
+
+    const fadeConfig = { mass: 5, tension: 2000, friction: 200 };
+
+    const fadeOut = useTrail(contactMeContent.length, {
+        config: fadeConfig,
+        opacity: showItems ? 1 : 0,
+        x: showItems ? 0 : 20,
+        height: showItems ? 80 : 0,
+        from: { opacity: 0, x: 20, height: 0 },
+    });
+
+    const successContent = [(
+        <CheckCircleOutlineIcon style={{ width: 150, height: 150 }} />
+    ), (
+        <h3>Sent Successfully!</h3>
+    ), (
+        <span>I look forward to responding to you within then next 1-2 business days</span>
+    )];
+
+    const fadeIn = useTrail(successContent.length, {
+        config: fadeConfig,
+        opacity: showSuccess ? 1 : 0,
+        x: showSuccess ? 0 : 20,
+        height: showSuccess ? 80 : 0,
+        from: { opacity: 0, x: 20, height: 0 },
+    });
+
     return (
         <div className="container text-secondary d-flex flex-column justify-content-center align-items-center">
-            <h3 className="font-weight-bold">Let's connect and chat!</h3>
             <div className="w-75 d-flex flex-column align-items-center">
-                <FormControl required variant="outlined" className={classes.formControl}>
-                    <InputLabel id="demo-simple-select-outlined-label">Reason for contacting</InputLabel>
-                    <Select
-                        required
-                        labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
-                        name="contact-reason-dropdown"
-                        value={reason}
-                        onChange={handleChange}
-                        label="Reason for contacting"
+                {showItems && fadeOut.map(({ x, height, ...rest }, index) => (
+                    <animated.div
+                        key={index}
+                        className="trails-text d-flex flex-column align-items-center w-100"
+                        style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`), delay: (1100*(index+1)) }}
                     >
-                        <MenuItem value="recruiter">I'm looking to network as a Recruiter</MenuItem>
-                        <MenuItem value="opportunity">I'm interested in discussing a career or business opportunity</MenuItem>
-                        <MenuItem value="engineer">I have questions as an Engineer</MenuItem>
-                        <MenuItem value="other">Other</MenuItem>
-                    </Select>
-                </FormControl>
-                <TextField
-                    required
-                    name="name-input"
-                    onChange={handleChange}
-                    className="col-9 mt-3"
-                    id="standard-basic"
-                    label="Your Name"
-                    value={name}
-                />
-                <div className="d-flex col-9 p-0 align-items-between justify-content-between">
-                    <TextField
-                        required
-                        name="email-input"
-                        onChange={handleChange}
-                        className="col-9 mt-3 pr-3"
-                        id="email-input"
-                        label="Your Email"
-                        value={email}
-                    />
-                    <FormControl className="col-3 mt-3">
-                        <InputLabel htmlFor="formatted-text-mask-input">Your Number</InputLabel>
-                        <Input
-                            onChange={handleChange}
-                            name="phone-number-input"
-                            id="formatted-text-mask-input"
-                            inputComponent={TextMaskCustom}
-                        />
-                    </FormControl>
-                </div>
-                <FormControl
-                    className="d-flex mt-3 col-9 align-items-center"
-                    style={{ minHeight: 130 }} /* TODO: Remove in-line styling */
-                >
-                    <TextField
-                        required
-                        className="w-100"
-                        id="comments-input"
-                        label="Comments / Questions / Feedback"
-                        multiline
-                        rowsMax={5}
-                        name="comments-input"
-                        onChange={handleChange}
-                        value={comments}
-                    />
-                </FormControl>
-                <div className="mt-3">
-                    <Button
-                        disabled={!isFormValid}
-                        variant="contained"
-                        endIcon={<SendIcon />}
-                        onClick={handleSubmit}
+                        {contactMeContent[index]}
+                    </animated.div>
+                ))}
+                {showSuccess && fadeIn.map(({ x, height, ...rest }, index) => (
+                    <animated.div
+                        key={index}
+                        className="trails-text d-flex flex-column align-items-center w-100"
+                        style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`), delay: (1100*(index+1)) }}
                     >
-                        Send
-                    </Button>
-                </div>
+                        {successContent[index]}
+                    </animated.div>
+                ))}
             </div>
         </div>
     );
