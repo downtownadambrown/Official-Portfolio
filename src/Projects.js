@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import './Projects.css';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import portfolioProject from './static/portfolio-project-resized.png';
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -18,18 +20,32 @@ const TabPanel = (props) => {
 
 const AppProjects = () => {
     return (
-        <div className="container p-3 d-flex align-self-center justify-self-center">
-            <div className="border d-flex flex-grow-1">
-                <div className="border col-2 p-3 d-flex justify-content-center" style={{ borderBottomRightRadius: 5, width: 240 }}>
-                    My Portfolio (this site)
-                </div>
-                <div className="d-flex flex-column col-10">
-                    <div className="mt-3 d-flex flex-row">
-                        <div className="col-3">Technologies used:</div>
-                        <div className="col-9">React.js, ES6 Javascript, Memoization, Hooks, SASS, React-Spring, Email.js, Material UI/Bootstrap, React-Text-Mask</div>
+        <div className="container d-flex align-self-center justify-self-center" style={{ height: 184 }}>
+            <div className="d-flex flex-grow-1">
+                <div className="col-2 p-0">
+                    <img src={portfolioProject} width={185} />
+                    <div className="bottom-centered-strip text-secondary">
+                        My Portfolio (this site)
                     </div>
-                    <div className="col-12 my-3">
-                        Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat. Lorum ipsum dolor text and repeat.
+                </div>
+                <div className="d-flex flex-column col-10 p-0">
+                    <div className="d-flex flex-column">
+                        <div className="d-flex flex-row">
+                            <div className="col-2 font-weight-bold">Technologies:</div>
+                            <div className="col-10">React.js, ES6 Javascript, Memoization, Hooks, SASS, React-Spring, Material UI/Bootstrap</div>
+                        </div>
+                        <div className="d-flex flex-row mt-2">
+                            <div className="col-2 font-weight-bold">Concepts:</div>
+                            <div className="col-10">Memoization, Hooks (useState, useEffect, useCallback), Hoisting, Controlled Inputs, Text Masking</div>
+                        </div>
+                        <div className="d-flex flex-row mt-2">
+                            <div className="col-2 font-weight-bold">Description:</div>
+                            <div className="col-10">
+                                <span>
+                                    My goal of building this site was to make it as informative as possible also while creating a unique portfolio experience to help showcase my React development abilities and inspire others.  For this, I chose to use React-Spring for some fun transitions, wanted to leverage as much of Bootstrap as possible for simplicity, but also wanted to get things up and going in a reasonable timeframe which is why I chose to use Material UI for basic components.
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,6 +63,7 @@ const Projects = () => {
     return (
         <div className="d-flex flex-column text-secondary">
             <Tabs
+                className="mb-4"
                 value={value}
                 onChange={handleChange}
                 textColor="inherit"
