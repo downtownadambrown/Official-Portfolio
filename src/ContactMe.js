@@ -148,7 +148,7 @@ const ContactMe = () => {
                 </div>
                 <FormControl
                     className="d-flex mt-3 col-9 align-items-center"
-                    style={{ minHeight: 130 }}
+                    style={{ minHeight: 130 }} /* TODO: Remove in-line styling */
                 >
                     <TextField
                         required
