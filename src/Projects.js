@@ -23,7 +23,7 @@ const AppProjects = () => {
         <div className="container d-flex align-self-center justify-self-center" style={{ height: 184 }}>
             <div className="d-flex flex-grow-1">
                 <div className="col-2 p-0">
-                    <img src={portfolioProject} width={185} />
+                    <img src={portfolioProject} width={185} alt="Adam Brown Portfolio Project" />
                     <div className="bottom-centered-strip text-secondary">
                         My Portfolio (this site)
                     </div>
