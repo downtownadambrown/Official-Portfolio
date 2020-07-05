@@ -16,7 +16,7 @@ const HowCanIHelp = () => {
 
     return (
         <div className="mt-3 d-flex flex-column align-items-center">
-            <h4 className="font-weight-bold text-secondary">How can I help?</h4>
+            <h4 className="font-weight-bold text-secondary">How can I help? You are:</h4>
             <Accordion
                 className="help-accordion"
                 expanded={(accordion === "panel3")}
@@ -27,7 +27,7 @@ const HowCanIHelp = () => {
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                 >
-                    <span className="text-secondary font-weight-bold">I'm here as an Engineer</span>
+                    <span className="text-secondary font-weight-bold">An Engineer</span>
                 </AccordionSummary>
                 <AccordionDetails>
                     <div className="text-secondary">
@@ -47,7 +47,7 @@ const HowCanIHelp = () => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <span className="text-secondary font-weight-bold">I'm here as a Recruiter</span>
+                    <span className="text-secondary font-weight-bold">A Recruiter</span>
                 </AccordionSummary>
                 <AccordionDetails>
                     <div className="text-secondary ">
@@ -67,7 +67,7 @@ const HowCanIHelp = () => {
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                 >
-                    <span className="text-secondary font-weight-bold">I'm here as a Hiring Manager</span>
+                    <span className="text-secondary font-weight-bold">A Hiring Manager</span>
                 </AccordionSummary>
                 <AccordionDetails>
                     <div className="text-secondary">
