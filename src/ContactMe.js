@@ -12,7 +12,7 @@ import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 
-const isEmailingEnabled = true; // feature flag for emailing to actually fire
+const isEmailingEnabled = false; // feature flag for emailing to actually fire
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
