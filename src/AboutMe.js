@@ -12,6 +12,8 @@ const AboutMe = () => {
                     alt="Adam Brown"
                     className="adam-image"
                     src={adamImage}
+                    height={243}
+                    width={324}
                 />
                 <div className="text-secondary text-block">
                     <p>Hi there!  I'm Adam Brown from Atlanta GA and I am dedicated to technology, learning, teaching, building, gaming, and so much more.</p>
