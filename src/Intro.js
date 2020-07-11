@@ -126,7 +126,7 @@ const Intro = () => {
                 <div className="col-md-6 col-sm-12" key={`${tile.label}-${tile.delay}`}>
                     <animated.div style={tile.springs[0]} className="">
                         <div className="buttonTile">
-                            <div className={`${!(index % 2) ? "flex-md-row-reverse" : ""} d-flex align-items-center`}>
+                            <div className={`${!(index % 2) ? "flex-md-row-reverse" : ""} d-flex align-items-center justify-content-center`}>
                                 {tile.icon}
                                 <animated.div style={tile.springs[1]}>
                                     <span>{tile.label}</span>

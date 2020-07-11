@@ -127,23 +127,23 @@ const ContactMe = () => {
             required
             name="name-input"
             onChange={handleChange}
-            className="col-9 mt-3"
+            className="d-flex col-md-9 col-sm-12 mt-3"
             id="standard-basic"
             label="Your Name"
             value={name}
         />
     ), (
-        <div className="d-flex col-9 p-0 align-items-between justify-content-between">
+        <div className="d-flex col-md-9 col-sm-12 p-0 align-items-between justify-content-between flex-sm-column flex-md-row">
             <TextField
                 required
                 name="email-input"
                 onChange={handleChange}
-                className="col-9 mt-3 pr-3"
+                className="col-md-9 col-sm-12 mt-3 pr-md-3 pr-sm-0"
                 id="email-input"
                 label="Your Email"
                 value={email}
             />
-            <FormControl className="col-3 mt-3">
+            <FormControl className="col-md-3 col-sm-12 mt-3">
                 <InputLabel htmlFor="formatted-text-mask-input">Your Number</InputLabel>
                 <Input
                     onChange={handleChange}
@@ -155,7 +155,7 @@ const ContactMe = () => {
         </div>
     ), (
         <FormControl
-            className="d-flex mt-3 col-9 align-items-center"
+            className="d-flex mt-3 col-md-9 col-sm-12 align-items-center"
             style={{ minHeight: 130 }} /* TODO: Remove in-line styling */
         >
             <TextField

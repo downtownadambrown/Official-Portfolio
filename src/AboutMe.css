@@ -54,7 +54,7 @@
     box-shadow: 5px 5px 20px;
     width: 324px;
     height: 243px;
-    align-self: flex-start;
+    /* align-self: flex-start; */
     border-radius: 15px;
 
 }
