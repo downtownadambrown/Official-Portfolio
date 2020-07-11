@@ -10,7 +10,7 @@ const AboutMe = () => {
             <div className="container d-flex align-items-center flex-sm-column flex-lg-row">
                 <img
                     alt="Adam Brown"
-                    className="adam-image"
+                    className="adam-image mb-sm-3"
                     src={adamImage}
                     height={243}
                     width={324}
