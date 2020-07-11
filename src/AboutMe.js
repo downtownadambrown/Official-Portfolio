@@ -5,9 +5,9 @@ import HowCanIHelp from './HowCanIHelp';
 
 const AboutMe = () => {
     return (
-        <div className="container d-flex flex-column align-items-center h-100">
-            <h2 className="font-weight-bold text-secondary">About Me</h2>
-            <div className="container d-flex align-items-center flex-sm-column flex-lg-row">
+        <div className="container d-flex flex-column align-items-center h-100 text-secondary">
+            <h2 className="font-weight-bold">About Me</h2>
+            <div className="container d-flex align-items-center flex-sm-column flex-lg-row w-100 px-0">
                 <img
                     alt="Adam Brown"
                     className="adam-image mb-sm-3"
@@ -15,13 +15,16 @@ const AboutMe = () => {
                     height={243}
                     width={324}
                 />
-                <div className="text-secondary text-block">
+                <div className="text-block">
                     <p>Hi there!  I'm Adam Brown from Atlanta GA and I am dedicated to technology, learning, teaching, building, gaming, and so much more.</p>
 
                     <p>I am currently employed with Cox Automotive working with Autotrader on their Marketplace Delivery Stream / Search Results Page.  We strive to make highly-efficient components for Autotrader.com using React.js and the latest tools following Agile methodologies.</p>
 
                     <p>My background is anything but traditional, although I did manage to complete a Bachelor's of Science in Mathematics from UGA somehow.  I have always been into programming, but didn't officially pursue the career until 2018 outside of a few contract jobs.</p>
                 </div>
+            </div>
+            <div className="text-block">
+                <p>As a technical recruiter from 2013-2018, I helped around 40 individuals per year get hired which was a number that consistently put me at the top of my company.  I almost exclusively recruited Engineers of all skill levels with a passion for helping newcomers make that switch.  I used my technical background to connect dots that other people weren't aware of, to stretch jobs and open up managers to alternative solutions that met their needs, and I saw first-hand all the intricacies to this process in terms of how managers operate and hire, how candidates get evaluated and screened, and what really matters in any given job description.</p>
             </div>
             <HowCanIHelp />
         </div>
