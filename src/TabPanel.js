@@ -43,7 +43,7 @@ const TabPanel = () => {
     };
 
     return (
-        <div className="bg-light h-100">
+        <React.Fragment>
             <AppBar position="static">
                 <Tabs
                     centered
@@ -80,7 +80,7 @@ const TabPanel = () => {
             <Panel value={value} index={4}>
                 <ContactMe />
             </Panel>
-        </div>
+        </React.Fragment>
     );
 };
 

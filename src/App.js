@@ -14,7 +14,7 @@ const AppRouter = () => {
     const location = useLocation();
 
     return (
-        <div className="app">
+        <div className="app bg-light">
             <Switch location={location}>
                 <Route path="/" exact>
                     <Intro />
