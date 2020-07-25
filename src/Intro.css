@@ -3,6 +3,10 @@ html, body, .root {
     height: 100%;
 }
 
+a {
+    color: inherit;
+}
+
 .introTitle {
     font-size: 26px;
     color: rgb(183, 183, 183);
@@ -151,4 +155,20 @@ html, body, .root {
 .dialog-enter-active {
     transform: translateX(-150px);
     transition: transform 400ms ease-in;
+}
+
+.follow-me {
+    position: fixed;
+    top: calc(50% - (210px / 2));
+    left: 0px;
+    height: 210px;
+}
+
+.media-bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.media-bar-icon {
+    margin: 10px;
 }

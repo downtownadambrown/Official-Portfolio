@@ -7,10 +7,57 @@ import { DiJsBadge } from "react-icons/di";
 import { FaRegLightbulb } from "react-icons/fa";
 import { AiOutlineTool } from "react-icons/ai";
 
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import InstagramIcon from '@material-ui/icons/Instagram';
+
 import Fab from '@material-ui/core/Fab';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import { useHistory } from "react-router-dom";
+
+const FollowMe = () => {
+    const fadeInProps = {
+        marginLeft: 0,
+        width: 70,
+        from: {
+            marginLeft: -80,
+            width: 70,
+        },
+        config: config.wobbly,
+    };
+    const springs = [
+        useSpring({ ...fadeInProps, delay: 3000 }),
+        useSpring({ ...fadeInProps, delay: 3250 }),
+        useSpring({ ...fadeInProps, delay: 3500 }),
+    ];
+
+    return (
+        <div className="follow-me">
+            <div className="media-bar">
+                <a href="https://www.linkedin.com/in/downtownadambrownatl/">
+                    <animated.div style={springs[0]}>
+                        <LinkedInIcon className="media-bar-icon" style={{ fontSize: 50 }} />
+                    </animated.div>
+                </a>
+            </div>
+            <div className="media-bar">
+                <a href="https://github.com/downtownadambrown">
+                    <animated.div style={springs[1]}>
+                        <GitHubIcon className="media-bar-icon" style={{ fontSize: 50 }} />
+                    </animated.div>
+                </a>
+            </div>
+            <div className="media-bar">
+                <a href="https://www.instagram.com/downtown.adambrown/">
+                    <animated.div style={springs[2]}>
+                        <InstagramIcon className="media-bar-icon" style={{ fontSize: 50 }} />
+                    </animated.div>
+                </a>
+            </div>
+        </div>
+    );
+};
 
 const Intro = () => {
     let history = useHistory();
@@ -156,9 +203,10 @@ const Intro = () => {
     });
 
     return (
-        <div className="intro d-flex flex-column align-items-center justify-content-center">
-            {fadeOut.map(({ x, height, ...rest }, index) =>
-                (<animated.div
+        <React.Fragment>
+            <div className="intro d-flex flex-column align-items-center justify-content-center">
+                {fadeOut.map(({ x, height, ...rest }, index) => (
+                    <animated.div
                         key={index}
                         className="trails-text d-flex flex-column align-items-center"
                         style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`), delay: (1100*(index+1)) }}
@@ -166,7 +214,9 @@ const Intro = () => {
                         {introContent[index]}
                     </animated.div>
                 ))}
-        </div>
+            </div>
+            <FollowMe />
+        </React.Fragment>
     );
 };
 
