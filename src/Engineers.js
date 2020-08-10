@@ -32,7 +32,6 @@ const EngineerIntro = () => (
 
 const EngineerCodeCamps = () => (
     <div className="container d-flex align-items-center justify-content-center flex-column">
-        <h5 className="font-weight-bold">Code Camps</h5>
         <h3 className="font-weight-bold">What is a Code Camp and should I attend one?</h3>
         <p>Around 2013-2014, Javascript-based web frameworks were on the rise and every company was working diligently to implement them in their environments -- Google's Angular.js was the top choice at the time and Facebook's React.js had just come out.  There simply was a heightened demand for Javascript developers than ever before.  Colleges were falling short of providing graduates with turn-key modern tool knowledge -- although a CS degree is highly valuable and someone in this situation can typically learn fast -- but companies needed more than that, they needed someone with actual framework knowledge who could contribute immediately.</p>
         <p>The demand has only increased and so have the number of open source frameworks.  'Code Schools' / 'Code Camps' were slowly started around the nation, initially on the west coast but quickly moved east because of their success.  I personally saw them pop up in Atlanta GA -- first it was just 2 major ones, but within years there were 10 or more reputable code schools.</p>
