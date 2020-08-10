@@ -3,6 +3,8 @@ import './Projects.css';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import portfolioProject from './static/portfolio-project.png';
+import dhsComponent from './static/dhs-component.png';
+import packagesComponent from './static/packages-component.png';
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -45,6 +47,39 @@ const AppProjects = () => {
     );
 };
 
+const UIComponents = () => {
+    return (
+        <div className="container d-flex flex-wrap align-self-center justify-self-center h-100">
+            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
+                <div className="bg-dark d-flex justify-content-center" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
+                    <img src={dhsComponent} style={{ height: '100%' }} alt="Dealer Home Services UI Component" />
+                </div>
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
+                <div className="bg-dark fill" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
+                    <img src={packagesComponent} className="scale-down" alt="Dealer Home Services UI Component" />
+                </div>
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
+                <div className="bg-dark" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
+
+                </div>
+            </div>
+            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
+                <div className="bg-dark" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
+
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const OtherProjects = () => (
+    <div className="container d-flex flex-wrap align-self-center justify-self-center h-100 align-items-center justify-content-center">
+        Coming Soon
+    </div>
+);
+
 const Projects = () => {
     const [value, setValue] = useState(0);
 
@@ -74,10 +109,10 @@ const Projects = () => {
                 <AppProjects />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Item 2
+                <UIComponents />
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Item 3
+                <OtherProjects />
             </TabPanel>
         </div>
     );

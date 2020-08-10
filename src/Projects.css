@@ -8,3 +8,20 @@
     color: black;
     font-weight: bold;
 }
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill img {
+    flex-shrink: 0;
+}
+
+.scale-down {
+    width: auto;
+    height: auto;
+    max-width: 150%;
+    max-height: 100%;
+}
