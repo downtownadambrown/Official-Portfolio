@@ -33,10 +33,15 @@ const EngineerIntro = () => (
 const EngineerCodeCamps = () => (
     <div className="container d-flex align-items-center justify-content-center flex-column">
         <h3 className="font-weight-bold">What is a Code Camp and should I attend one?</h3>
+        <h5 className="font-weight-bold">Code Schools are 3-month cram courses for modern web development skills</h5>
         <p>Around 2013-2014, Javascript-based web frameworks were on the rise and every company was working diligently to implement them in their environments -- Google's Angular.js was the top choice at the time and Facebook's React.js had just come out.  There simply was a heightened demand for Javascript developers than ever before.  Colleges were falling short of providing graduates with turn-key modern tool knowledge -- although a CS degree is highly valuable and someone in this situation can typically learn fast -- but companies needed more than that, they needed someone with actual framework knowledge who could contribute immediately.</p>
         <p>The demand has only increased and so have the number of open source frameworks.  'Code Schools' / 'Code Camps' were slowly started around the nation, initially on the west coast but quickly moved east because of their success.  I personally saw them pop up in Atlanta GA -- first it was just 2 major ones, but within years there were 10 or more reputable code schools.</p>
         <p>The idea is great, actually, because the material to get employed and begin a new career can be learned within 3-6 months if someone is diligent and focused.</p>
-        <h3 className="font-weight-bold">Code Schools essentially are cram courses for modern web development skills</h3>
+        <h5 className="font-weight-bold">Important notes first:</h5>
+        <ul>
+            <li>You do not have to attend a code camp to learn this material.  You can do it for FREE via online learning, one great resource is <a href="https://www.freecodecamp.org">FreeCodeCamp.org</a>.  Also -- check out <a href="https://gumroad.com/l/teach-yourself-to-code">Martha Sharpe's book "Teach Yourself To Code"</a> which I highly recommend.</li>
+            <li>Code camps do not guarantee employment -- you will have to work after the course is over to achieve that.  Managers now understand what a code camp is and they are looking for the continued dedication afterwards to ensure they are hiring someone who is interested in continued growth</li>
+        </ul>
         <p>This can be a great thing and also a very difficult thing, depending upon your situation.</p>
         <h5 className="font-weight-bold">What I found to be great about a code camp:</h5>
         <ul>
