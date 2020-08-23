@@ -1,5 +1,12 @@
+html {
+    height: 100%;
+}
 
-html, body, .root {
+body {
+    height: 100%;
+}
+
+#mount {
     height: 100%;
 }
 
