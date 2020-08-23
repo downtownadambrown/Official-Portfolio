@@ -15,8 +15,7 @@ const AppRouter = () => {
     const location = useLocation();
     const { pathname } = location;
     const containerClassName = classnames({
-        'bg-light': (pathname !== '/'),
-        'bg-dark': (pathname === '/'),
+        /*'bg-dark': (pathname === '/'),*/
     }, 'app');
 
     return (
@@ -34,9 +33,11 @@ const AppRouter = () => {
 };
 
 const App = () => (
-    <Router>
-        <AppRouter />
-    </Router>
+    <div className="bg-light h-100">
+        <Router>
+            <AppRouter />
+        </Router>
+    </div>
 );
 
 export default App;

@@ -215,7 +215,7 @@ const Intro = () => {
                     </animated.div>
                 ))}
             </div>
-            <FollowMe />
+            {/* <FollowMe />*/}
         </React.Fragment>
     );
 };
