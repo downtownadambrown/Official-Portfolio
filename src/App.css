@@ -14,3 +14,15 @@ body {
     height: 100%;
     width: 100%;
 }
+
+.resume-modal {
+    top: 25% !important;
+    left: 50% !important;
+}
+
+.resume-modal-container {
+    position: absolute;
+    top: 50%;
+    height: 600px;
+    width: 300px;
+}

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import Modal from '@material-ui/core/Modal';
+import { makeStyles } from '@material-ui/core/styles';
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -61,10 +63,11 @@ const EngineerCodeCamps = () => (
     </div>
 );
 
-const EngineerResume = () => (
+const EngineerResume = ({ handleModalOpen }) => (
     <div className="container d-flex flex-column">
         <h3 className="font-weight-bold align-self-center">Your Resume:  Quick Wins</h3>
         <p>One of the most popular inquiries I receive is in regards to resume assistance.  Here are some general guidelines that I follow when I am formatting someone else's resume, or when I am updating mine.</p>
+        <button onClick={handleModalOpen}>Here is a link to what my Resume currently looks like</button>
         <h5>My principles to showcasing your abilities in your resume:</h5>
         <ul>
             <li className="font-weight-bold">Traditional Education at the top (College or University)</li>
@@ -104,14 +107,42 @@ const EngineerResume = () => (
                 </ul>
             </ul>
         </ul>
-    </div>);
+    </div>
+);
+
+function getModalStyle() {
+    const top = 50;
+    const left = 50;
+
+    return {
+        top: `${top}%`,
+        left: `${left}%`,
+        transform: `translate(-${top}%, -${left}%)`,
+    };
+}
+
+const useStyles = makeStyles((theme) => ({
+    paper: {
+        position: 'absolute',
+        width: 400,
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(2, 4, 3),
+    },
+}));
 
 const Engineers = () => {
+    const classes = useStyles();
     const [value, setValue] = useState(0);
-
+    const [isModalOpen, setModal] = useState(false);
+    const [modalStyle] = useState(getModalStyle);
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const handleModalClose = () => setModal(false);
+    const handleModalOpen = () => setModal(true);
 
     return (
         <div className="d-flex flex-column text-secondary">
@@ -141,7 +172,20 @@ const Engineers = () => {
                 <EngineerCodeCamps />
             </TabPanel>
             <TabPanel value={value} index={2}>
-                <EngineerResume />
+                <EngineerResume handleModalOpen={handleModalOpen} key={0} />
+                <Modal
+                    style={modalStyle}
+                    className={classes.paper}
+                    open={isModalOpen}
+                    onClose={handleModalClose}
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    key={1}
+                >
+                    <div className="resume-modal-container">
+                        test
+                    </div>
+                </Modal>
             </TabPanel>
             <TabPanel value={value} index={3}>
                 Coming Soon

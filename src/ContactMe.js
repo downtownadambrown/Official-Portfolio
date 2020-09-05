@@ -209,7 +209,7 @@ const ContactMe = () => {
     });
 
     return (
-        <div className="container text-secondary d-flex flex-column justify-content-center align-items-center">
+        <div className="container text-secondary d-flex flex-column justify-content-center align-items-center pt-5">
             <div className="w-75 d-flex flex-column align-items-center">
                 {showItems && fadeOut.map(({ x, height, ...rest }, index) => (
                     <animated.div

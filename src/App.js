@@ -13,13 +13,9 @@ import {
 
 const AppRouter = () => {
     const location = useLocation();
-    const { pathname } = location;
-    const containerClassName = classnames({
-        /*'bg-dark': (pathname === '/'),*/
-    }, 'app');
 
     return (
-        <div className={containerClassName}>
+        <div className="app">
             <Switch location={location}>
                 <Route path="/" exact>
                     <Intro />
@@ -33,7 +29,7 @@ const AppRouter = () => {
 };
 
 const App = () => (
-    <div className="bg-light h-100">
+    <div className="h-100">
         <Router>
             <AppRouter />
         </Router>

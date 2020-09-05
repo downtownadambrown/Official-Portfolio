@@ -60,6 +60,7 @@ const FollowMe = () => {
 };
 
 const Intro = () => {
+    const enableFollowMe = false;
     let history = useHistory();
     const ref = useRef([]);
     const [items, set] = useState([]);
@@ -163,7 +164,7 @@ const Intro = () => {
         <div className="d-flex align-items-center flex-column">
             {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
                 <animated.div className="transitions-item" key={key} style={rest}>
-                    <animated.div style={{ overflow: 'hidden', height: innerHeight, flexDirection: "column" }} className="introTitle">{item}</animated.div>
+                    <animated.div style={{ overflow: 'hidden', height: innerHeight, flexDirection: "column" }} className="introTitle text-secondary">{item}</animated.div>
                 </animated.div>
             ))}
         </div>
@@ -173,7 +174,7 @@ const Intro = () => {
                 <div className="col-md-6 col-sm-12" key={`${tile.label}-${tile.delay}`}>
                     <animated.div style={tile.springs[0]} className="">
                         <div className="buttonTile">
-                            <div className={`${!(index % 2) ? "flex-md-row-reverse" : ""} d-flex align-items-center justify-content-center`}>
+                            <div className={`${!(index % 2) ? "flex-md-row-reverse" : ""} d-flex align-items-center justify-content-center text-secondary`}>
                                 {tile.icon}
                                 <animated.div style={tile.springs[1]}>
                                     <span>{tile.label}</span>
@@ -186,8 +187,8 @@ const Intro = () => {
         </div>
     ),(
         <animated.div style={iconSpring}>
-            <Fab tabIndex={-1} onClick={handleClick} style={{ backgroundColor: 'rgb(183, 183, 183)'}}>
-                <ArrowForwardIosIcon />
+            <Fab tabIndex={-1} onClick={handleClick} className="arrow-icon-container">
+                <ArrowForwardIosIcon className="arrow-icon" />
             </Fab>
         </animated.div>
     )];
@@ -215,7 +216,7 @@ const Intro = () => {
                     </animated.div>
                 ))}
             </div>
-            {/* <FollowMe />*/}
+            {enableFollowMe && <FollowMe />}
         </React.Fragment>
     );
 };
