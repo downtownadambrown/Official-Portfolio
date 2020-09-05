@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import TabPanel from './TabPanel';
 import Intro from './Intro';
-import classnames from 'classnames';
 
 import {
     BrowserRouter as Router,

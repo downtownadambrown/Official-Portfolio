@@ -38,7 +38,7 @@ const buildProps = (index) => ({
 
 const TabPanel = () => {
     const [value, setValue] = useState(0);
-    const [toggle, set] = useState(true);
+    const [toggle] = useState(true);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
