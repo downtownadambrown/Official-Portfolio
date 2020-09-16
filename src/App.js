@@ -17,10 +17,10 @@ const AppRouter = () => {
         <div className="app">
             <Switch location={location}>
                 <Route path="/" exact>
-                    <Intro />
+                    <Intro key={0} />
                 </Route>
                 <Route path="/home">
-                    <TabPanel />
+                    <TabPanel key={1} />
                 </Route>
             </Switch>
         </div>

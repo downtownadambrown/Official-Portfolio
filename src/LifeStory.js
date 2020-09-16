@@ -1,9 +1,9 @@
 import React from 'react';
 
-const LifeStory = (props) => {
+const LifeStory = () => {
     return (
-        <div>
-            Coming Soon
+        <div className="container d-flex flex-column h-100 text-secondary pt-5">
+            ayy
         </div>
     );
 };

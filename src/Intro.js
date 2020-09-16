@@ -99,29 +99,29 @@ const Intro = () => {
             icon: <FaTeamspeak className="m-3" size="50px" />,
             label: "Gamer",
             springs: [
-                useSpring({ ...fadeInProps, delay: 800 }),
-                useSpring({ ...secondAnimatedProps.left, delay: 2400 }),
+                useSpring({ ...fadeInProps, delay: 600 }),
+                useSpring({ ...secondAnimatedProps.left, delay: 800 }),
             ]
         },{
             icon: <DiJsBadge className="m-3" size="50px" />,
             label: "Coder",
             springs: [
-                useSpring({ ...fadeInProps, delay: 1200 }),
-                useSpring({ ...secondAnimatedProps.right, delay: 2400 }),
+                useSpring({ ...fadeInProps, delay: 1000 }),
+                useSpring({ ...secondAnimatedProps.right, delay: 1200 }),
             ],
         },{
             icon: <AiOutlineTool className="m-3" size="50px" />,
             label: "Engineer",
             springs: [
-                useSpring({ ...fadeInProps, delay: 1600 }),
-                useSpring({ ...secondAnimatedProps.left, delay: 2600 }),
+                useSpring({ ...fadeInProps, delay: 1400 }),
+                useSpring({ ...secondAnimatedProps.left, delay: 1600 }),
             ],
         },{
             icon: <FaRegLightbulb className="m-3" size="50px" />,
             label: "Mentor",
             springs: [
-                useSpring({ ...fadeInProps, delay: 2000 }),
-                useSpring({ ...secondAnimatedProps.right, delay: 2600 })
+                useSpring({ ...fadeInProps, delay: 1800 }),
+                useSpring({ ...secondAnimatedProps.right, delay: 2000 })
             ]
         }
     ];
@@ -142,7 +142,7 @@ const Intro = () => {
         }
     };
 
-    const iconSpring = useSpring({ ...iconAnimatedProps, delay: 3000 });
+    const iconSpring = useSpring({ ...iconAnimatedProps, delay: 2200 });
 
     useEffect(() => {
         ref.current.map(clearTimeout);
@@ -157,7 +157,6 @@ const Intro = () => {
         e.preventDefault();
         setShowItems(false);
         setTimeout(() => history.push('/home'), 800)
-        //history.push('/home');
     }, [history]);
 
     const introContent = [(

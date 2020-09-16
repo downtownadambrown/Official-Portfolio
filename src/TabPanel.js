@@ -34,6 +34,7 @@ const Panel = ({
 const buildProps = (index) => ({
     id: `simple-tab-${index}`,
     'aria-controls': `simple-tabpanel-${index}`,
+    key: `simple-tab-${index}`,
 });
 
 const TabPanel = () => {
@@ -69,19 +70,19 @@ const TabPanel = () => {
     ), (
         <React.Fragment>
             <Panel value={value} index={0}>
-                <AboutMe />
+                <AboutMe key={0} />
             </Panel>
             <Panel value={value} index={1}>
-                <LifeStory />
+                <LifeStory key={1} />
             </Panel>
             <Panel value={value} index={2}>
-                <Projects />
+                <Projects key={2} />
             </Panel>
             <Panel value={value} index={3}>
-                <Engineers />
+                <Engineers key={3} />
             </Panel>
             <Panel value={value} index={4}>
-                <ContactMe />
+                <ContactMe key={4} />
             </Panel>
         </React.Fragment>
     )];
@@ -100,9 +101,10 @@ const TabPanel = () => {
         <React.Fragment>
             {trail.map(({ x, height, ...rest }, index) => (
                 <animated.div
-                    key={fadeInItems[index]}
+                    key={`fade-in-${index}`}
                     className="trails-text"
-                    style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}>
+                    style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}
+                >
                     <animated.div style={{ height }}>{fadeInItems[index]}</animated.div>
                 </animated.div>
             ))}

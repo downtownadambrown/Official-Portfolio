@@ -30,10 +30,10 @@ const AppProjects = () => {
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
                 <div className="bg-dark" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
-
+                    <span>Jobster</span>
                 </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
+            {/*<div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
                 <div className="bg-dark" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
 
                 </div>
@@ -42,7 +42,7 @@ const AppProjects = () => {
                 <div className="bg-dark" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
 
                 </div>
-            </div>
+            </div>*/}
         </div>
     );
 };
@@ -60,7 +60,7 @@ const UIComponents = () => {
                     <img src={packagesComponent} className="scale-down" alt="Dealer Home Services UI Component" />
                 </div>
             </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
+{/*            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
                 <div className="bg-dark" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
 
                 </div>
@@ -69,16 +69,16 @@ const UIComponents = () => {
                 <div className="bg-dark" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
 
                 </div>
-            </div>
+            </div>*/}
         </div>
     );
 };
 
-const OtherProjects = () => (
+/*const OtherProjects = () => (
     <div className="container d-flex flex-wrap align-self-center justify-self-center h-100 align-items-center justify-content-center">
         Coming Soon
     </div>
-);
+);*/
 
 const Projects = () => {
     const [value, setValue] = useState(0);
@@ -103,7 +103,7 @@ const Projects = () => {
             >
                 <Tab label="Apps" />
                 <Tab label="UI Components" />
-                <Tab label="Other Projects" />
+                {/*<Tab label="Other Projects" />*/}
             </Tabs>
             <TabPanel value={value} index={0} className="d-flex flex-wrap">
                 <AppProjects />
@@ -111,9 +111,9 @@ const Projects = () => {
             <TabPanel value={value} index={1}>
                 <UIComponents />
             </TabPanel>
-            <TabPanel value={value} index={2}>
+{/*            <TabPanel value={value} index={2}>
                 <OtherProjects />
-            </TabPanel>
+            </TabPanel>*/}
         </div>
     );
 };

@@ -16,11 +16,11 @@ const AboutMe = () => {
                     width={324}
                 />
                 <div className="text-block">
-                    <p>Hi there!  I'm Adam Brown from Atlanta GA and I am dedicated to technology, learning, teaching, building, gaming, and so much more.</p>
+                    <p>Hi there!  I'm Adam Brown from Atlanta GA and I am dedicated to technology, learning, teaching, building, gaming, and animals.</p>
 
-                    <p>I am currently employed with Cox Automotive working with Autotrader on their Marketplace Delivery Stream / Search Results Page.  We strive to make highly-efficient components for Autotrader.com using React.js and the latest tools following Agile methodologies.</p>
+                    <p>I currently work at Twitch as a Full Stack Engineer.  Previously, I was employed with Cox Automotive working with Autotrader on their Marketplace Delivery Stream / Search Results Page.  I strive to make highly-efficient UI components using React.js on AWS using the latest tools following Agile methodologies.</p>
 
-                    <p>My background is anything but traditional, although I did manage to complete a Bachelor's of Science in Mathematics from UGA somehow.  I have always been into programming, but didn't officially pursue the career until 2018 outside of a few contract jobs.</p>
+                    <p>My background is anything but traditional, although I did manage to complete a Bachelor's of Science in Mathematics from the University of Georgia.  I have always been into programming, but didn't officially pursue the career until 2018 outside of a few contract jobs and freelance work.</p>
                 </div>
             </div>
             <div className="text-block">
