@@ -61,7 +61,7 @@ const TabPanel = () => {
                 }}
             >
                 <Tab label="About Me" {...buildProps(0)} />
-                <Tab label="My Story" {...buildProps(1)} />
+                {/*<Tab label="My Story" {...buildProps(1)} />*/}
                 <Tab label="Projects" {...buildProps(2)} />
                 <Tab label="For Engineers" {...buildProps(3)} />
                 <Tab label="Contact Me" {...buildProps(4)} />
@@ -72,17 +72,17 @@ const TabPanel = () => {
             <Panel value={value} index={0}>
                 <AboutMe key={0} />
             </Panel>
-            <Panel value={value} index={1}>
+{/*            <Panel value={value} index={1}>
                 <LifeStory key={1} />
+            </Panel>*/}
+            <Panel value={value} index={1}>
+                <Projects key={1} />
             </Panel>
             <Panel value={value} index={2}>
-                <Projects key={2} />
+                <Engineers key={2} />
             </Panel>
             <Panel value={value} index={3}>
-                <Engineers key={3} />
-            </Panel>
-            <Panel value={value} index={4}>
-                <ContactMe key={4} />
+                <ContactMe key={3} />
             </Panel>
         </React.Fragment>
     )];

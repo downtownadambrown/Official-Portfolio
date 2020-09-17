@@ -66,19 +66,11 @@ const UIComponents = () => {
                 subTitle="Vehicle Packages on Listing Card"
                 technologies={['React', 'Redux', 'Node', 'Express', 'React-Bootstrap']}
                 ctaText="View More +"
-                handleCTAClick={() => {}}
+                handleCTAClick={() => {
+                    //do stuff
+                }}
                 backgroundURL={packagesComponent}
             />
-{/*            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
-                <div className="bg-dark d-flex justify-content-center" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
-                    <img src={dhsComponent} style={{ height: '100%' }} alt="Dealer Home Services UI Component" />
-                </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-12 mb-4" style={{ height: 200 }}>
-                <div className="bg-dark fill" style={{ width: "100%", height: "100%", borderRadius: 15 }}>
-                    <img src={packagesComponent} className="scale-down" alt="Dealer Home Services UI Component" />
-                </div>
-            </div>*/}
         </div>
     );
 };
