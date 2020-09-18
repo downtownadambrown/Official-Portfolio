@@ -4,6 +4,10 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: {
         app: './src/index.js',
+/*        intro: './src/Intro.js',
+        about: './src/AboutMe.js',
+        engineers: './src/Engineers.js',
+        contact: './src/ContactMe.js',*/
     },
     devtool: 'inline-source-map',
     output: {
@@ -28,8 +32,16 @@ module.exports = {
                 ]
             },
             {
-                test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                test: /\.(scss|sass)$/i,
+                include: [
+                    path.resolve(__dirname, 'node_modules/'),
+                    path.resolve(__dirname, 'src/scss')
+                ],
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader', options: { modules: true } },
+                    { loader: 'sass-loader' }
+                ],
             },
             {
                 test: /\.(pdf|png|jpg|ttf)/,

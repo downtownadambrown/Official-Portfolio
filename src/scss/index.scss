@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'BalooTamma2';
-  src: local('BalooTamma2'), url(./font/BalooTamma2-Regular.ttf) format('truetype');
+  src: local('BalooTamma2'), url(../font/BalooTamma2-Regular.ttf) format('truetype');
 }
 
 body {
@@ -11,11 +11,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 textarea:focus, input:focus, button:focus {
   outline: none;
 }
+
+@import "./AboutMe.scss";
+@import "./App.scss";
+@import "./HowCanIHelp.scss";
+@import "./Intro.scss";
+@import "./NavBar.scss";
+@import "./Projects.scss";

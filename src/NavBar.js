@@ -1,5 +1,4 @@
 import React from "react";
-import './NavBar.scss';
 import { useLocation, useHistory } from "react-router-dom";
 import classnames from 'classnames';
 

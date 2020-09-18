@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useSpring, useTransition, useTrail, animated, config } from 'react-spring';
-import './Intro.scss';
 
 import { FaTeamspeak } from "react-icons/fa";
 import { DiJsBadge } from "react-icons/di";
