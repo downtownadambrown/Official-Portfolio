@@ -1,5 +1,5 @@
 import React from 'react';
-import './AboutMe.css';
+import './AboutMe.scss';
 import adamImage from './static/adam.jpg';
 import HowCanIHelp from './HowCanIHelp';
 

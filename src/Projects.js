@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Projects.css';
+import './Projects.scss';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import portfolioProject from './static/portfolio-project.png';

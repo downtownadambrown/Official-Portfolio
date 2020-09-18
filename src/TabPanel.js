@@ -7,7 +7,6 @@ import Box from '@material-ui/core/Box';
 import AboutMe from './AboutMe';
 import ContactMe from './ContactMe';
 import Projects from './Projects';
-import LifeStory from './LifeStory';
 import Engineers from './Engineers';
 
 const Panel = ({
