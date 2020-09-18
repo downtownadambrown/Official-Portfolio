@@ -9,7 +9,7 @@ import {
     useLocation,
 } from "react-router-dom";
 import AboutMe from "./AboutMe";
-import Projects from "./Projects";
+// import Projects from "./Projects";
 import Engineers from "./Engineers";
 import ContactMe from "./ContactMe";
 import NavBar from "./NavBar";
@@ -28,7 +28,7 @@ const AppRouter = () => {
                     <AboutMe />
                 </Route>
                 <Route path="/projects" exact>
-                    <Projects />
+                    {/*<Projects />*/}
                 </Route>
                 <Route path="/engineers" exact>
                     <Engineers />
