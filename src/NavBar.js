@@ -13,7 +13,7 @@ const NavBar = () => {
         <div className="navbar-container centered">
             <NavBarItem label="About Me" route="/about" first />
             <NavBarItem label="Projects" route="/projects" />
-            <NavBarItem label="For Engineers" route="/engineers" />
+            <NavBarItem label="For Engineers" route="/engineers/intro" altroute="/engineers" />
             <NavBarItem label="Contact Me" route="/contact" />
         </div>
     );

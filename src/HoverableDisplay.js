@@ -9,9 +9,6 @@ const HoverableDisplay = ({
     handleCTAClick = () => {},
     backgroundURL = '',
     backgroundColor = '',
-    textColor = '#FFFFFF',
-    width = '100%',
-    height = '350px',
     technologies = [],
     ...rest
 }) => {
@@ -32,8 +29,9 @@ const HoverableDisplay = ({
                             {subTitle}
                         </div>
                         <div className="hd-technologies">
-                            {technologies.map(label => (
+                            {technologies.map((label, index) => (
                                 <Chip
+                                    key={`chip-label-${index}`}
                                     className="mx-1 mb-1"
                                     label={label}
                                     variant="outlined"

@@ -145,36 +145,29 @@ const EngineerInterviews = () => (
     </div>
 );
 
-/*const EngineerInterviews = () => (
-    <div className="container d-flex flex-column">
-        <h3 className="font-weight-bold align-self-center">What do I do now?</h3>
-        <p></p>
-    </div>
-);*/
-
 const Engineers = () => {
     let { path } = useRouteMatch();
 
     return (
         <div>
             <div className="navbar-container centered mb-3">
-                <NavBarItem label="Intro" route="/engineers" first />
+                <NavBarItem label="Intro" route="/engineers/intro" first />
                 <NavBarItem label="Code Camps" route="/engineers/code-camps" />
                 <NavBarItem label="Resume" route="/engineers/resume" />
                 <NavBarItem label="Recruiters" route="/engineers/recruiters" />
                 <NavBarItem label="Interviews" route="/engineers/interviews" />
             </div>
             <Switch>
-                <Route path={path} exact>
+                <Route path={`${path}/intro`}>
                     <EngineerIntro />
                 </Route>
                 <Route path={`${path}/code-camps`}>
                     <EngineerCodeCamps />
                 </Route>
-                <Route path={`${path}/resume`} exact>
+                <Route path={`${path}/resume`}>
                     <EngineerResume />
                 </Route>
-                <Route path={`${path}/recruiters`} exact>
+                <Route path={`${path}/recruiters`}>
                     <EngineerEngagingRecruiters />
                 </Route>
                 <Route path={`${path}/interviews`}>
