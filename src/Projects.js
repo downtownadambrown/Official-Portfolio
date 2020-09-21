@@ -1,27 +1,9 @@
-import React, { useState } from 'react';
-import './Projects.css';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import React from 'react';
 import portfolioProject from './static/portfolio-project.png';
 import bamazonProject from './static/bamazon-project.png';
 import dhsComponent from './static/dhs-component.png';
 import packagesComponent from './static/packages-component.png';
 import HoverableDisplay from "./HoverableDisplay";
-
-const TabPanel = (props) => {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            {...other}
-        >
-            {(value === index) && children}
-        </div>
-    );
-};
-
 
 const AppProjects = () => {
     return (
@@ -75,48 +57,13 @@ const UIComponents = () => {
     );
 };
 
-/*const OtherProjects = () => (
-    <div className="container d-flex flex-wrap align-self-center justify-self-center h-100 align-items-center justify-content-center">
-        Coming Soon
-    </div>
-);*/
-
-const Projects = () => {
-    const [value, setValue] = useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
-    return (
-        <div className="d-flex flex-column text-secondary">
-            <Tabs
-                className="mb-4"
-                value={value}
-                onChange={handleChange}
-                textColor="inherit"
-                centered
-                TabIndicatorProps={{
-                    style: {
-                        backgroundColor: '#6c757d',
-                    }
-                }}
-            >
-                <Tab label="Apps" />
-                <Tab label="UI Components" />
-                {/*<Tab label="Other Projects" />*/}
-            </Tabs>
-            <TabPanel value={value} index={0} className="d-flex flex-wrap">
-                <AppProjects />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                <UIComponents />
-            </TabPanel>
-{/*            <TabPanel value={value} index={2}>
-                <OtherProjects />
-            </TabPanel>*/}
+const Projects = () => (
+    <div className="mt-3">
+        <div className="navbar-container centered mb-3 d-flex flex-column h-100">
+            <AppProjects />
+            <UIComponents />
         </div>
-    );
-};
+    </div>
+);
 
 export default Projects;

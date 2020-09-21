@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useSpring, useTransition, useTrail, animated, config } from 'react-spring';
-import './Intro.css';
 
 import { FaTeamspeak } from "react-icons/fa";
 import { DiJsBadge } from "react-icons/di";
@@ -150,13 +149,12 @@ const Intro = () => {
         set([]);
         ref.current.push(setTimeout(() => set(['Hello.']), 250));
         ref.current.push(setTimeout(() => set(['Hello.', 'I\'m Adam Brown.']), 750));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleClick = useCallback((e) => {
         e.preventDefault();
         setShowItems(false);
-        setTimeout(() => history.push('/home'), 800)
+        setTimeout(() => history.push('/about'), 800)
     }, [history]);
 
     const introContent = [(

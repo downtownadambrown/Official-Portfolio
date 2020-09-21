@@ -1,6 +1,4 @@
 import React from 'react';
-import './App.css';
-import TabPanel from './TabPanel';
 import Intro from './Intro';
 
 import {
@@ -9,18 +7,33 @@ import {
     Route,
     useLocation,
 } from "react-router-dom";
+import AboutMe from "./AboutMe";
+import Projects from "./Projects";
+import Engineers from "./Engineers";
+import ContactMe from "./ContactMe";
+import NavBar from "./NavBar";
 
 const AppRouter = () => {
     const location = useLocation();
 
     return (
-        <div className="app">
+        <div className="app text-secondary">
+            <NavBar />
             <Switch location={location}>
                 <Route path="/" exact>
-                    <Intro key={0} />
+                    <Intro />
                 </Route>
-                <Route path="/home">
-                    <TabPanel key={1} />
+                <Route path="/about">
+                    <AboutMe />
+                </Route>
+                <Route path="/projects">
+                    <Projects />
+                </Route>
+                <Route path="/engineers">
+                    <Engineers />
+                </Route>
+                <Route path="/contact">
+                    <ContactMe />
                 </Route>
             </Switch>
         </div>
