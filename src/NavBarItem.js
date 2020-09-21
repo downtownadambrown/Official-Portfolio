@@ -14,8 +14,8 @@ const NavBarItem = ({ label, route, first, altroute }) => {
     }, "navbar-border navbar-item");
 
     return (
-        <div className={classnames({ "ml-2": !first }, "navbar-item-container centered nav__item")} onClick={() => history.push(route)}>
-            <span className={classnames({ "font-weight-bold": selected }, "navbar-item nav__link centered")}>
+        <div className={classnames({ "ml-2": !first }, "navbar-item-container centered")} onClick={() => history.push(route)}>
+            <span className={classnames({ "font-weight-bold": selected }, "navbar-item centered")}>
                 {label}
             </span>
             <div className={className} />
