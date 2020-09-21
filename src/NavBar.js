@@ -1,23 +1,17 @@
 import React from "react";
-import { useLocation, useHistory } from "react-router-dom";
-import classnames from 'classnames';
-
+import NavBarItem from './NavBarItem';
+import { useLocation } from "react-router-dom";
 const NavBar = () => {
-    const history = useHistory();
-    const location = useLocation();
+    const { pathname } = useLocation();
 
-    const NavBarItem = ({ label, route }) => (
-        <div className="navbar-item-container centered" onClick={() => history.push(route)}>
-            <div className="navbar-item centered">
-                {label}
-            </div>
-            <div className={classnames({ "navbar-selected": location.pathname === route }, "navbar-border navbar-item")} />
-        </div>
-    );
+    // Do not show Nav Bar on base path
+    if (pathname === "/") {
+        return null;
+    }
 
     return (
         <div className="navbar-container centered">
-            <NavBarItem label="About Me" route="/about" />
+            <NavBarItem label="About Me" route="/about" first />
             <NavBarItem label="Projects" route="/projects" />
             <NavBarItem label="For Engineers" route="/engineers" />
             <NavBarItem label="Contact Me" route="/contact" />

@@ -25,23 +25,10 @@
     z-index: 10;
 }
 
-.navbar-border:hover {
-    color: #FFF;
-    height: 100%;
-    border-bottom-color: red;
-    border-bottom-style: solid;
-    border-bottom-width: 5px;
-    z-index: 100;
-}
-
-.navbar-item-container:hover .navbar-border {
-    border-bottom-width: 5px;
-    transition: border-bottom-width 250ms ease-in-out;
-}
-
-.navbar-selected {
-    /*border-bottom-width: 5px;
-    transition: border-bottom-width 250ms ease-in-out;*/
+.navbar-item-selected {
+  border-bottom-color: rgb(108, 117, 125);
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
 }
 
 .centered {
@@ -60,20 +47,20 @@
     overflow: hidden;
 
     &:before {
-         content: "";
-         position: absolute;
-         z-index: -1;
-         left: 0;
-         right: 100%;
-         bottom: 0;
-         background: #2980b9;
-         height: 4px;
-         -webkit-transition-property: right;
-         transition-property: right;
-         -webkit-transition-duration: 0.3s;
-         transition-duration: 0.3s;
-         -webkit-transition-timing-function: ease-out;
-         transition-timing-function: ease-out;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        background: rgb(108, 117, 125);
+        height: 3px;
+        -webkit-transition-property: right;
+        transition-property: right;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
     }
 
     &:hover:before {

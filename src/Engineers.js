@@ -1,22 +1,13 @@
 import React, {useState} from 'react';
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
 import adamResume from './static/adamresume.pdf';
 import adamSummary from './static/adamsummary.pdf';
+import NavBarItem from "./NavBarItem";
 
-const TabPanel = (props) => {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            {...other}
-        >
-            {(value === index) && children}
-        </div>
-    );
-};
+import {
+    Switch,
+    Route,
+    useRouteMatch,
+} from "react-router-dom";
 
 const EngineerIntro = () => (
     <div className="container d-flex align-items-center justify-content-center flex-column">
@@ -162,51 +153,36 @@ const EngineerInterviews = () => (
 );*/
 
 const Engineers = () => {
-    const [value, setValue] = useState(0);
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+    let { path } = useRouteMatch();
 
     return (
-        <div className="d-flex flex-column text-secondary">
-            <Tabs
-                className="mb-4"
-                value={value}
-                onChange={handleChange}
-                textColor="inherit"
-                centered
-                TabIndicatorProps={{
-                    style: {
-                        backgroundColor: '#6c757d',
-                    }
-                }}
-            >
-                <Tab label="Intro" />
-                <Tab label="Code Camps" />
-                <Tab label="Resume" />
-                <Tab label="Engaging Recruiters" />
-                <Tab label="Interviews" />
-                {/*<Tab label="What now?" />*/}
-            </Tabs>
-            <TabPanel value={value} index={0} className="d-flex flex-wrap">
-                <EngineerIntro />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                <EngineerCodeCamps />
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                <EngineerResume />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                <EngineerEngagingRecruiters />
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-                <EngineerInterviews />
-            </TabPanel>
-{/*            <TabPanel value={value} index={5}>
-                Coming Soon
-            </TabPanel>*/}
+        <div>
+            <div className="navbar-container centered mb-3">
+                <NavBarItem label="Intro" route="/engineers" first />
+                <NavBarItem label="Code Camps" route="/engineers/code-camps" />
+                <NavBarItem label="Resume" route="/engineers/resume" />
+                <NavBarItem label="Recruiters" route="/engineers/recruiters" />
+                <NavBarItem label="Interviews" route="/engineers/interviews" />
+            </div>
+            <Switch>
+                <Route path={path} exact>
+                    <EngineerIntro />
+                </Route>
+                <Route path={`${path}/code-camps`}>
+                    <EngineerCodeCamps />
+                </Route>
+                <Route path={`${path}/resume`} exact>
+                    <EngineerResume />
+                </Route>
+                <Route path={`${path}/recruiters`} exact>
+                    <EngineerEngagingRecruiters />
+                </Route>
+                <Route path={`${path}/interviews`}>
+                    <EngineerInterviews />
+                </Route>
+            </Switch>
         </div>
+
     );
 };
 

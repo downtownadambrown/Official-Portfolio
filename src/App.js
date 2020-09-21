@@ -8,7 +8,7 @@ import {
     useLocation,
 } from "react-router-dom";
 import AboutMe from "./AboutMe";
-// import Projects from "./Projects";
+import Projects from "./Projects";
 import Engineers from "./Engineers";
 import ContactMe from "./ContactMe";
 import NavBar from "./NavBar";
@@ -17,19 +17,19 @@ const AppRouter = () => {
     const location = useLocation();
 
     return (
-        <div className="app">
+        <div className="app text-secondary">
             <NavBar />
             <Switch location={location}>
                 <Route path="/" exact>
                     <Intro />
                 </Route>
-                <Route path="/about" exact>
+                <Route path="/about">
                     <AboutMe />
                 </Route>
-                <Route path="/projects" exact>
-                    {/*<Projects />*/}
+                <Route path="/projects">
+                    <Projects />
                 </Route>
-                <Route path="/engineers" exact>
+                <Route path="/engineers">
                     <Engineers />
                 </Route>
                 <Route path="/contact">

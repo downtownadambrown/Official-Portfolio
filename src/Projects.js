@@ -6,6 +6,13 @@ import bamazonProject from './static/bamazon-project.png';
 import dhsComponent from './static/dhs-component.png';
 import packagesComponent from './static/packages-component.png';
 import HoverableDisplay from "./HoverableDisplay";
+import NavBarItem from "./NavBarItem";
+
+import {
+    Switch,
+    Route,
+    useRouteMatch,
+} from "react-router-dom";
 
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
@@ -86,6 +93,16 @@ const Projects = () => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+    let { path } = useRouteMatch();
+
+    return (
+        <div className="mt-3">
+            <div className="navbar-container centered mb-3 d-flex flex-column h-100">
+                <AppProjects />
+                <UIComponents />
+            </div>
+        </div>
+    );
 
     return (
         <div className="d-flex flex-column text-secondary">
