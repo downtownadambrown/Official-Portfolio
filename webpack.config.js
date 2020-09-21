@@ -1,18 +1,14 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: {
-        app: './src/index.js',
-/*        intro: './src/Intro.js',
-        about: './src/AboutMe.js',
-        engineers: './src/Engineers.js',
-        contact: './src/ContactMe.js',*/
-    },
+    entry: ['./src/index.js', './src/scss/index.scss'],
     devtool: 'inline-source-map',
     output: {
         filename: "[name].js",
-        path: path.resolve(__dirname, "./build")
+        path: path.resolve(__dirname, "./build"),
+        publicPath: "/",
     },
     module: {
         rules: [
@@ -38,8 +34,13 @@ module.exports = {
                     path.resolve(__dirname, 'src/scss')
                 ],
                 use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader', options: { modules: true } },
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: './build',
+                        },
+                    },
+                    { loader: 'css-loader' },
                     { loader: 'sass-loader' }
                 ],
             },
@@ -52,11 +53,18 @@ module.exports = {
     devServer: {
         contentBase: './build',
         hot: true,
+        historyApiFallback: true,
     },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./public/index.html",
             filename: "./index.html"
-        })
+        }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        }),
     ]
 };

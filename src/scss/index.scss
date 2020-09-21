@@ -1,12 +1,7 @@
-@font-face {
-  font-family: 'BalooTamma2';
-  src: local('BalooTamma2'), url(../font/BalooTamma2-Regular.ttf) format('truetype');
-}
-
 body {
   margin: 0;
   padding: 0;
-  font-family: BalooTamma2;
+  font-family: 'Baloo Tamma 2';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
