@@ -14,7 +14,7 @@ import SendIcon from '@material-ui/icons/Send';
 import {animated, useTrail} from "react-spring";
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
-const isEmailingEnabled = false; // feature flag for emailing to actually fire
+const isEmailingEnabled = true; // feature flag for emailing to actually fire
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
