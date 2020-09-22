@@ -150,7 +150,7 @@ const Engineers = () => {
 
     return (
         <div>
-            <div className="navbar-container centered mb-3">
+            <div className="sub-navbar-container centered mb-3">
                 <NavBarItem label="Intro" route="/engineers/intro" first />
                 <NavBarItem label="Code Camps" route="/engineers/code-camps" />
                 <NavBarItem label="Resume" route="/engineers/resume" />
