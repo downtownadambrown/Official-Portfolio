@@ -13,14 +13,9 @@ const NavBarItem = ({ label, route, first, altroute }) => {
         "navbar-item-selected": selected,
     }, "navbar-border navbar-item");
 
-    const styles = {};
-    if (selected) {
-        styles.fontWeight = "bold";
-    }
-
     return (
         <div className={classnames({ "ml-2": !first }, "navbar-item-container centered")} onClick={() => history.push(route)}>
-            <span className="navbar-item centered" style={styles}>
+            <span className={classnames({ "font-weight-bold": selected }, "navbar-item centered")}>
                 {label}
             </span>
             <div className={className} />
