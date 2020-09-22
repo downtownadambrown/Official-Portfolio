@@ -2,9 +2,15 @@
     height: 48px;
 }
 
+.sub-navbar-container {
+    height: 48px;
+}
+
+$tab-width: 200px;
+
 .navbar-item-container {
     height: 100%;
-    width: 160px;
+    width: $tab-width;
     position: relative;
     transition: border-bottom-width 0.5s ease-in;
 }
@@ -12,9 +18,10 @@
 .navbar-item {
     color: rgb(108, 117, 125);
     height: 100%;
-    width: 160px;
+    width: $tab-width;
     position: absolute;
     text-transform: uppercase;
+    font-size: 20px;
 }
 
 .navbar-border {
@@ -68,6 +75,7 @@
     }
 }
 
+
 /* SANDBOX */
 
 // ---------------------------
@@ -93,18 +101,18 @@
 // ---------------------------
 
 .nav {
-
+    display: none;
     // Toggle Button
     &__toggle {
         display:inline-block;
-        position:absolute;
+        position:fixed;
         z-index:20;
         padding:0;
         border:0;
         background:transparent;
         outline:0;
         left:15px;
-        top:12px;
+        top:15px;
         cursor:pointer;
         border-radius:50%;
         transition:background-color .15s linear;
@@ -212,10 +220,10 @@
     top: 0;
     left:0;
     height: 100%;
-    width: 400px;
+    width: 414px;
     background-color: teal;
     color: rgb(108, 117, 125);
-    transform: translateX(-400px);
+    transform: translateX(-414px);
     transition: transform 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -227,6 +235,37 @@
 
     &-open {
         transform: translateX(0);
+    }
+}
+
+
+@media (max-width: 836px) {
+    .submenu-title, .menu-overlay a {
+        font-size: 24px;
+    }
+
+    .navbar-container, .sub-navbar-container {
+        display: none !important;
+    }
+
+    .nav {
+        display: flex;
+    }
+}
+@media (max-width: 992px) {
+    .navbar-item-container {
+        width: 160px;
+    }
+
+    .navbar-item {
+        font-size: 16px;
+        width: 160px;
+    }
+}
+
+@media (max-width: 414px) {
+    .menu-overlay {
+        width: 100%;
     }
 }
 

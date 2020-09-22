@@ -31,7 +31,6 @@ const NavBar = () => {
 
     return (
             <header className="header" role="banner">
-
                 <nav id="nav" className={classes} role="navigation">
                     <a onClick={handleToggle} className="nav__toggle" role="button" aria-expanded={toggle} aria-controls="menu">
                         <svg className="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
@@ -61,24 +60,18 @@ const NavBar = () => {
                             <Link to="/engineers/interviews">Interviewing</Link>
                         </div>
                     </div>
-
-                    {/*<div className="splash"></div>*/}
                 </nav>
-
-                <div className="title-container">
-                    <h3 className="page-title">{title}</h3>
+                <div className="navbar-container centered">
+                    <NavBarItem label="About Me" route="/about" first />
+                    <NavBarItem label="Projects" route="/projects" />
+                    <NavBarItem label="For Engineers" route="/engineers/intro" altroute="/engineers" />
+                    <NavBarItem label="Contact Me" route="/contact" />
                 </div>
+{/*                <div className="title-container">
+                    <h3 className="page-title">{title}</h3>
+                </div>*/}
             </header>
     );
-
-/*    return (
-        <div className="navbar-container centered">
-            <NavBarItem label="About Me" route="/about" first />
-            <NavBarItem label="Projects" route="/projects" />
-            <NavBarItem label="For Engineers" route="/engineers/intro" altroute="/engineers" />
-            <NavBarItem label="Contact Me" route="/contact" />
-        </div>
-    );*/
 };
 
 export default NavBar;
