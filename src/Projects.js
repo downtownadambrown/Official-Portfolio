@@ -12,7 +12,7 @@ const AppProjects = () => {
                 className="col-lg-6 col-md-12 appTile d-flex justify-content-center align-items-center"
                 title="My Website (this site)"
                 subTitle="Built to help Engineers, a lot of love and experimentation went into this app :)"
-                technologies={['React', 'React-Spring', 'Material-UI', 'Hooks']}
+                technologies={['React', 'React-Spring', 'React-Router', 'SASS', 'Hooks']}
                 ctaText="View More +"
                 handleCTAClick={() => {}}
                 backgroundURL={portfolioProject}
