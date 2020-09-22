@@ -1,11 +1,12 @@
 body {
   margin: 0;
-  padding-left: 17px;
+  // padding-left: 17px;
   width: calc(100vw - 17px);
   font-family: 'Baloo Tamma 2';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/*
 
 @media screen and (min-width: 1058px) {
   body {
@@ -13,6 +14,7 @@ body {
     width: calc(100vw - 17px);
   }
 }
+*/
 
 textarea:focus, input:focus, button:focus {
   outline: none;

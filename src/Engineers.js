@@ -150,13 +150,13 @@ const Engineers = () => {
 
     return (
         <div>
-            <div className="navbar-container centered mb-3">
+{/*            <div className="navbar-container centered mb-3">
                 <NavBarItem label="Intro" route="/engineers/intro" first />
                 <NavBarItem label="Code Camps" route="/engineers/code-camps" />
                 <NavBarItem label="Resume" route="/engineers/resume" />
                 <NavBarItem label="Recruiters" route="/engineers/recruiters" />
                 <NavBarItem label="Interviews" route="/engineers/interviews" />
-            </div>
+            </div>*/}
             <Switch>
                 <Route path={`${path}/intro`}>
                     <EngineerIntro />
