@@ -198,6 +198,9 @@ $tab-width: 200px;
 .header {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 48px;
     min-height: 48px;
 }

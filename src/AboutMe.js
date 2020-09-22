@@ -4,7 +4,7 @@ import HowCanIHelp from './HowCanIHelp';
 
 const AboutMe = () => {
     return (
-        <div className="container d-flex flex-column align-items-center h-100 text-secondary">
+        <div className="container d-flex flex-column align-items-center text-secondary">
             <h2 className="font-weight-bold show-only-mobile">About Me</h2>
             <div className="container d-flex align-items-center flex-column flex-lg-row w-100 px-0">
                 <img
