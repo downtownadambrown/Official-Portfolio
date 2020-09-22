@@ -67,9 +67,6 @@ const NavBar = () => {
                     <NavBarItem label="For Engineers" route="/engineers/intro" altroute="/engineers" />
                     <NavBarItem label="Contact Me" route="/contact" />
                 </div>
-{/*                <div className="title-container">
-                    <h3 className="page-title">{title}</h3>
-                </div>*/}
             </header>
     );
 };

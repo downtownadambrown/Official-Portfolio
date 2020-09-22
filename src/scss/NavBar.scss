@@ -205,14 +205,6 @@ $tab-width: 200px;
     min-height: 48px;
 }
 
-.title-container {
-    height: 100%;
-    margin-left: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
 .page-title {
     margin: 0;
 }
@@ -241,8 +233,27 @@ $tab-width: 200px;
     }
 }
 
+@media (max-width: 633px) {
+    .sticky {
+        padding-left: 55px;
+    }
+}
 
 @media (max-width: 836px) {
+    .sticky {
+        position: sticky;
+        width: 100%;
+        height: 65px;
+        top: 0px;
+        background: white;
+        display: flex;
+        justify-content: center;
+
+        & h3 {
+            margin-bottom: 10px;
+        }
+    }
+
     .submenu-title, .menu-overlay a {
         font-size: 24px;
     }
@@ -253,6 +264,14 @@ $tab-width: 200px;
 
     .nav {
         display: flex;
+    }
+
+    .header {
+        position: absolute;
+    }
+
+    .container {
+        margin-top: 66px;
     }
 }
 @media (max-width: 992px) {

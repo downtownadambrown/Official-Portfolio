@@ -11,7 +11,9 @@ import {
 
 const EngineerIntro = () => (
     <div className="container d-flex align-items-center justify-content-center flex-column">
-        <h3 className="font-weight-bold align-self-center">Introduction to a Life-Changing Experience in IT</h3>
+        <div className="sticky">
+            <h3 className="font-weight-bold d-flex align-self-end">Introduction to a Life-Changing Experience</h3>
+        </div>
         <p>Welcome future Engineer!  I couldn't be happier you found this site and are looking to better yourself.  There are a lot of skilled trades in this world and learning how to code is arguably one of the most stable career paths, although it typically won't feel like it when we search for our first job in tech.  It's challenging to learn sufficient material to get hired, let alone getting interviews with 0 professional experience on our resumes.  Everyone whom I have seen dedicate a year of their life to learning technologies has been successfully hired in tech at a salary higher than they expected was possible for their first job.</p>
         <p><span className="font-weight-bold">The Objective of this site</span> is to supply YOU with all the information you need to know if this is right for you, or if you've already begun your adventure -- this can help you land that first job, or at least immediately increase your interview requests.</p>
         <p>Getting there, again, is not easy.  We have our current lives, families, bills, our current job(s) needed to survive.  A year is a reasonable estimate for you to make this change be impactful for yourself, although with more available time, I have seen people get up to speed and hired within 3-4 months.</p>
@@ -23,7 +25,9 @@ const EngineerIntro = () => (
 
 const EngineerCodeCamps = () => (
     <div className="container d-flex flex-column">
-        <h3 className="font-weight-bold align-self-center">What is a Code Camp and should I attend one?</h3>
+        <div className="sticky">
+            <h3 className="font-weight-bold d-flex align-self-end">What is a Code Camp and should I attend one?</h3>
+        </div>
         <h5 className="font-weight-bold align-self-center">Code Camps / Code Schools are 3-month cram courses for modern web development skills</h5>
         <p>Around 2013-2014, Javascript-based web frameworks were on the rise and every company was working diligently to implement them in their environments -- Google's Angular.js was the top choice at the time and Facebook's React.js had just come out.  There simply was a heightened demand for Javascript developers than ever before.  Colleges were falling short of providing graduates with turn-key modern tool knowledge -- although a CS degree is highly valuable and someone in this situation can typically learn fast -- but companies needed more than that, they needed someone with actual framework knowledge who could contribute immediately.</p>
         <p>The demand has only increased and so have the number of open source frameworks.  'Code Schools' / 'Code Camps' were slowly started around the nation, initially on the west coast but quickly moved east because of their success.  I personally saw them pop up in Atlanta GA -- first it was just 2 major ones, but within years there were 10 or more reputable code schools.</p>
@@ -54,7 +58,9 @@ const EngineerCodeCamps = () => (
 
 const EngineerResume = () => (
     <div className="container d-flex flex-column">
-        <h3 className="font-weight-bold align-self-center">Your Resume:  Quick Wins</h3>
+        <div className="sticky">
+            <h3 className="font-weight-bold align-self-end">Your Resume:  Quick Wins</h3>
+        </div>
         <p>One of the most popular inquiries I receive is in regards to resume assistance.  Here are some general guidelines that I follow when I am formatting someone else's resume, or when I am updating mine.</p>
         <p><a href={adamResume} target="_blank" rel="noopener noreferrer">» Here is a link to what my Resume currently looks like «</a></p>
         <h5 className="font-weight-bold">My principles to showcasing your abilities in your resume:</h5>
@@ -101,7 +107,9 @@ const EngineerResume = () => (
 
 const EngineerEngagingRecruiters = () => (
     <div className="container d-flex flex-column">
-        <h3 className="font-weight-bold align-self-center">How to Engage Recruiters</h3>
+        <div className="sticky">
+            <h3 className="font-weight-bold align-self-end">How to Engage Recruiters</h3>
+        </div>
         <p>Remember -- It's not just about finding jobs, it's about learning to market yourself successfully to them and the people in hiring positions.  Presenting yourself effectively is over half of the battle.  Ideally, we just want chances to showcase our abilities and the more interviews you take, the better you will get at them.</p>
         <h5 className="font-weight-bold">Types of Recruiters</h5>
         <p>There are recruiters out there for every position in this country, some specialize in certain areas and some work on any position.  There are two different types of recruiters to know about:</p>
@@ -129,7 +137,9 @@ const EngineerEngagingRecruiters = () => (
 
 const EngineerInterviews = () => (
     <div className="container d-flex flex-column">
-        <h3 className="font-weight-bold align-self-center">Preparing for Interviews</h3>
+        <div className="sticky">
+            <h3 className="font-weight-bold align-self-end">Preparing for Interviews</h3>
+        </div>
         <p>As you start receiving momentum, you will probably have a moment of panic as things become a bit more 'real', but rest assured that you can do certain things to prepare for your interviews.  The best way to get better at interviewing is by taking interviews!  It is important to first have the right mindset:</p>
         <ul>
             <li className="font-weight-bold align-self-center">You are not going to ace every interview, you are going to struggle with some questions, this is 100% to be expected and normal.</li>

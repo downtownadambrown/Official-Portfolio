@@ -26,6 +26,12 @@ textarea:focus, input:focus, button:focus {
   align-items: center;
 }
 
+@media (max-width: 836px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+
 @import "./AboutMe.scss";
 @import "./App.scss";
 @import "./HowCanIHelp.scss";
