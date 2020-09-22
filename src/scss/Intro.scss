@@ -169,3 +169,13 @@
 .media-bar-icon {
     margin: 10px;
 }
+
+.transitions-item {
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    will-change: transform, opacity, height;
+    white-space: nowrap;
+    cursor: pointer;
+}

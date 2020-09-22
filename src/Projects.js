@@ -59,7 +59,7 @@ const UIComponents = () => {
 
 const Projects = () => (
     <div className="mt-3">
-        <div className="navbar-container centered mb-3 d-flex flex-column h-100">
+        <div className="projects-container centered mb-3 d-flex flex-column h-100">
             <AppProjects />
             <UIComponents />
         </div>

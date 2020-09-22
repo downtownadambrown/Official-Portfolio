@@ -5,11 +5,11 @@ import HowCanIHelp from './HowCanIHelp';
 const AboutMe = () => {
     return (
         <div className="container d-flex flex-column align-items-center h-100 text-secondary">
-            <h2 className="font-weight-bold">About Me</h2>
-            <div className="container d-flex align-items-center flex-sm-column flex-lg-row w-100 px-0">
+            <h2 className="font-weight-bold show-only-mobile">About Me</h2>
+            <div className="container d-flex align-items-center flex-column flex-lg-row w-100 px-0">
                 <img
                     alt="Adam Brown"
-                    className="adam-image mb-sm-3"
+                    className="adam-image mb-sm-3 mt-3"
                     src={adamImage}
                     height={243}
                     width={324}
