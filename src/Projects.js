@@ -12,7 +12,7 @@ const AppProjects = () => {
                 className="col-lg-6 col-md-12 appTile d-flex justify-content-center align-items-center"
                 title="My Website (this site)"
                 subTitle="Built to help Engineers, a lot of love and experimentation went into this app :)"
-                technologies={['React', 'React-Spring', 'React-Router', 'SASS', 'Hooks']}
+                technologies={['React', 'Webpack', 'React-Spring', 'React-Router', 'SASS', 'Hooks']}
                 ctaText="View More +"
                 handleCTAClick={() => {}}
                 backgroundURL={portfolioProject}
@@ -20,7 +20,7 @@ const AppProjects = () => {
             <HoverableDisplay
                 className="col-lg-6 col-md-12 appTile d-flex justify-content-center align-items-center"
                 title="Bamazon"
-                subTitle="An Amazon-esque full-stack warehouse management app"
+                subTitle="A full-stack warehouse management app running on Express"
                 technologies={['ES6 Javascript', 'Node.js', 'Express', 'PostgreSQL', 'Sequelize', 'HTML5', 'CSS3', 'Bootstrap']}
                 ctaText="View More +"
                 handleCTAClick={() => {}}
