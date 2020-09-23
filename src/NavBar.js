@@ -1,22 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import NavBarItem from './NavBarItem';
 import { useLocation, Link } from "react-router-dom";
 import classnames from 'classnames';
 
-const titleMap = {
-    "/about": "About Me",
-    "/projects": "Projects",
-    "/contact": "Contact Me",
-    "/engineers/intro": "For Engineers > Introduction",
-    "/engineers/code-camps": "For Engineers > Code Camps",
-    "/engineers/resume": "For Engineers > Resume Formatting",
-    "/engineers/recruiters": "For Engineers > Engaging Recruiters",
-    "/engineers/interviews": "For Engineers > Interviewing",
-};
-
 const NavBar = () => {
     const { pathname } = useLocation();
     const [toggle, setToggle] = useState(false);
+    const overlayRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (toggle && overlayRef.current && !overlayRef.current.contains(event.target)) {
+                setToggle(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [overlayRef, toggle]);
+
     // Do not show Nav Bar on base path
     if (pathname === "/") {
         return null;
@@ -27,7 +30,6 @@ const NavBar = () => {
     };
 
     const classes = classnames('nav', { 'nav--open': toggle });
-    const title = titleMap[pathname] || 'Error';
 
     return (
             <header className="header" role="banner">
@@ -44,20 +46,20 @@ const NavBar = () => {
                             </g>
                         </svg>
                     </a>
-                    <div className={classnames("menu-overlay", { "menu-overlay-open": toggle })}>
-                        <h2 className="submenu-title underlined">Adam's Portfolio</h2>
-                        <div className="menu-links" onClick={handleToggle}>
-                            <Link to="/about">About Me</Link>
-                            <Link to="/projects">Projects</Link>
-                            <Link to="/contact">Contact Me</Link>
+                    <div className={classnames("menu-overlay", { "menu-overlay-open": toggle })} ref={overlayRef}>
+                        <h2 className="submenu-title font-weight-bold">Adam's Portfolio</h2>
+                        <div className="submenu">
+                            <Link to="/about" className="pb-1" onClick={handleToggle}>About Me</Link>
+                            <Link to="/projects" className="pb-1" onClick={handleToggle}>Projects</Link>
+                            <Link to="/contact" className="" onClick={handleToggle}>Contact Me</Link>
                         </div>
-                        <h2 className="submenu-title underlined">For Engineers</h2>
-                        <div className="submenu" onClick={handleToggle}>
-                            <Link to="/engineers/intro">Intro</Link>
-                            <Link to="/engineers/code-camps">Code Camps</Link>
-                            <Link to="/engineers/resume">Resumes</Link>
-                            <Link to="/engineers/recruiters">Engaging Recruiters</Link>
-                            <Link to="/engineers/interviews">Interviewing</Link>
+                        <h2 className="submenu-title font-weight-bold">For Engineers</h2>
+                        <div className="submenu">
+                            <Link to="/engineers/intro" className="pb-1" onClick={handleToggle}>Intro</Link>
+                            <Link to="/engineers/code-camps" className="pb-1" onClick={handleToggle}>Code Camps</Link>
+                            <Link to="/engineers/resume" className="pb-1" onClick={handleToggle}>Resumes</Link>
+                            <Link to="/engineers/recruiters" className="pb-1" onClick={handleToggle}>Engaging Recruiters</Link>
+                            <Link to="/engineers/interviews" className="" onClick={handleToggle}>Interviewing</Link>
                         </div>
                     </div>
                 </nav>

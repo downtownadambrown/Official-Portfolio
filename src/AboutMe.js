@@ -8,7 +8,7 @@ const AboutMe = () => {
             <div className="sticky">
                 <h3 className="font-weight-bold align-self-end show-only-mobile">About Me</h3>
             </div>
-            <div className="container d-flex align-items-center flex-column flex-lg-row w-100 px-0">
+            <div className="container d-flex align-items-center flex-column w-100 px-0">
                 <img
                     alt="Adam Brown"
                     className="adam-image mb-sm-3 mt-3"
@@ -17,7 +17,7 @@ const AboutMe = () => {
                     width={324}
                 />
                 <div className="text-block">
-                    <p>Hi there!  I'm Adam Brown from Atlanta GA and I am dedicated to technology, learning, teaching, building, gaming, and animals.</p>
+                    <p>Hi there!  I'm Adam Brown from Atlanta GA and I am dedicated to technology, learning, teaching, building, gaming, and helping animals.</p>
 
                     <p>I currently work at Twitch as a Full Stack Engineer.  Previously, I was employed with Cox Automotive working with Autotrader on their Marketplace Delivery Stream / Search Results Page.  I strive to make highly-efficient UI components using React.js on AWS using the latest tools following Agile methodologies.</p>
 
