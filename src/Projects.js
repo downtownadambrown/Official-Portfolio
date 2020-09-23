@@ -58,7 +58,7 @@ const UIComponents = () => {
 };
 
 const Projects = () => (
-        <div className="container d-flex flex-column align-items-center">
+        <div className="container d-flex flex-column align-items-center mt-3">
             <div className="sticky">
                 <h3 className="font-weight-bold align-self-end show-only-mobile">Projects</h3>
             </div>
