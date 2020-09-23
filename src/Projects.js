@@ -58,12 +58,13 @@ const UIComponents = () => {
 };
 
 const Projects = () => (
-    <div className="mt-3">
-        <div className="projects-container centered mb-3 d-flex flex-column h-100">
+        <div className="container d-flex flex-column align-items-center">
+            <div className="sticky">
+                <h3 className="font-weight-bold align-self-end show-only-mobile">Projects</h3>
+            </div>
             <AppProjects />
             <UIComponents />
         </div>
-    </div>
 );
 
 export default Projects;

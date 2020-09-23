@@ -248,6 +248,7 @@ $tab-width: 200px;
         background: white;
         display: flex;
         justify-content: center;
+        z-Index: 3;
 
         & h3 {
             margin-bottom: 10px;
@@ -268,10 +269,6 @@ $tab-width: 200px;
 
     .header {
         position: absolute;
-    }
-
-    .container {
-        margin-top: 66px;
     }
 }
 @media (max-width: 992px) {

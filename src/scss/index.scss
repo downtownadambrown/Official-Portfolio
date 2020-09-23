@@ -38,3 +38,7 @@ textarea:focus, input:focus, button:focus {
 @import "./Intro.scss";
 @import "./NavBar.scss";
 @import "./Projects.scss";
+
+.contact-me {
+  height: calc(100% - 48px);
+}
