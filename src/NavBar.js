@@ -6,19 +6,6 @@ import classnames from 'classnames';
 const NavBar = () => {
     const { pathname } = useLocation();
     const [toggle, setToggle] = useState(false);
-    const overlayRef = useRef(null);
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (toggle && overlayRef.current && !overlayRef.current.contains(event.target)) {
-                setToggle(false);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [overlayRef, toggle]);
 
     // Do not show Nav Bar on base path
     if (pathname === "/") {
@@ -46,7 +33,7 @@ const NavBar = () => {
                             </g>
                         </svg>
                     </a>
-                    <div className={classnames("menu-overlay", { "menu-overlay-open": toggle })} ref={overlayRef}>
+                    <div className={classnames("menu-overlay", { "menu-overlay-open": toggle })}>
                         <h2 className="submenu-title font-weight-bold">Adam's Portfolio</h2>
                         <div className="submenu">
                             <Link to="/about" className="pb-1" onClick={handleToggle}>About Me</Link>
