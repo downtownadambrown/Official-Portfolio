@@ -1,6 +1,8 @@
 import React from 'react';
 import adamImage from './static/adam.jpg';
 import HowCanIHelp from './HowCanIHelp';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const AboutMe = () => {
     return (
@@ -16,6 +18,10 @@ const AboutMe = () => {
                     height={243}
                     width={324}
                 />
+                <div className="m-2">
+                    <GitHubIcon className="mr-2" onClick={() => window.location.href = 'https://www.github.com/downtownadambrown/'}/>
+                    <LinkedInIcon onClick={() => window.location.href = 'https://www.linkedin.com/in/downtownadambrownatl/'}/>
+                </div>
                 <div className="text-block">
                     <p>Hi there!  I'm Adam Brown from Atlanta GA and I am dedicated to technology, learning, teaching, building, gaming, and helping animals.</p>
 
