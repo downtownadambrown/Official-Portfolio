@@ -19,7 +19,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "webpack-dev-server --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "aws s3 sync build/ s3://asb-official-portfolio"
   },
   "eslintConfig": {
     "extends": "react-app"
