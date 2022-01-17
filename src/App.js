@@ -12,29 +12,37 @@ import Projects from "./Projects";
 import Engineers from "./Engineers";
 import ContactMe from "./ContactMe";
 import NavBar from "./NavBar";
+import NotFound from "./NotFound";
+
+console.log("======== Now running on AWS ========");
 
 const AppRouter = () => {
     const location = useLocation();
 
     return (
         <div className="app text-secondary">
-            <NavBar />
             <Switch location={location}>
                 <Route path="/" exact>
+                    <NavBar />
                     <Intro />
                 </Route>
-                <Route path="/about">
+                <Route path="/about" exact>
+                    <NavBar />
                     <AboutMe />
                 </Route>
-                <Route path="/projects">
+                <Route path="/projects" exact>
+                    <NavBar />
                     <Projects />
                 </Route>
-                <Route path="/engineers">
+                <Route path="/engineers" exact>
+                    <NavBar />
                     <Engineers />
                 </Route>
-                <Route path="/contact">
+                <Route path="/contact" exact>
+                    <NavBar />
                     <ContactMe />
                 </Route>
+                <Route component={NotFound} />
             </Switch>
         </div>
     );
