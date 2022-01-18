@@ -21,7 +21,7 @@ import ContactMe from "./ContactMe";
 import NavBar from "./NavBar";
 import NotFound from "./NotFound";
 
-console.log("======== Now running on AWS ========");
+console.log("======== Now running on AWS (app v1.02) ========");
 
 const AppRouter = () => {
     const location = useLocation();
