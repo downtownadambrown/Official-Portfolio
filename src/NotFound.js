@@ -5,9 +5,10 @@ import { useHistory } from "react-router-dom";
 
 const NotFound = () => {
     const history = useHistory();
+
     return (
         <div className="not-found-container h-100">
-            <div>Oops!  We couldn't find that page! (404)</div>
+            <div style={{ marginBottom: 20 }}>Oops!  We couldn't find that page! (404)</div>
             <Button color="info" onClick={() => history.push("/about")} variant="outlined">Back to Home</Button>
         </div>
     )

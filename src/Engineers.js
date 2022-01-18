@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import * as React from 'react';
 import adamResume from './static/adamresume.pdf';
 import adamSummary from './static/adamsummary.pdf';
 import NavBarItem from "./NavBarItem";
@@ -6,7 +6,6 @@ import NavBarItem from "./NavBarItem";
 import {
     Switch,
     Route,
-    useRouteMatch,
 } from "react-router-dom";
 
 const EngineerIntro = () => (
@@ -155,34 +154,22 @@ const EngineerInterviews = () => (
     </div>
 );
 
-const Engineers = () => (
-    <div>
-        <div className="sub-navbar-container centered mb-3">
-            <NavBarItem label="Intro" route="/engineers/intro" first />
-            <NavBarItem label="Code Camps" route="/engineers/code-camps" />
-            <NavBarItem label="Resume" route="/engineers/resume" />
-            <NavBarItem label="Recruiters" route="/engineers/recruiters" />
-            <NavBarItem label="Interviews" route="/engineers/interviews" />
-        </div>
-        <Switch>
-            <Route path={"/engineers/intro"}>
-                <EngineerIntro />
-            </Route>
-            <Route path={"/engineers/code-camps"}>
-                <EngineerCodeCamps />
-            </Route>
-            <Route path={"/engineers/resume"}>
-                <EngineerResume />
-            </Route>
-            <Route path={"/engineers/recruiters"}>
-                <EngineerEngagingRecruiters />
-            </Route>
-            <Route path={"/engineers/interviews"}>
-                <EngineerInterviews />
-            </Route>
-        </Switch>
+const EngineerNavBar = () => (
+    <div className="sub-navbar-container centered mb-3">
+        <NavBarItem label="Intro" route="/engineers/intro" first />
+        <NavBarItem label="Code Camps" route="/engineers/code-camps" />
+        <NavBarItem label="Resume" route="/engineers/resume" />
+        <NavBarItem label="Recruiters" route="/engineers/recruiters" />
+        <NavBarItem label="Interviews" route="/engineers/interviews" />
     </div>
 );
 
 
-export default Engineers;
+export { 
+    EngineerCodeCamps, 
+    EngineerNavBar, 
+    EngineerInterviews,
+    EngineerIntro,
+    EngineerResume, 
+    EngineerEngagingRecruiters
+};

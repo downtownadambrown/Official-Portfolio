@@ -9,7 +9,14 @@ import {
 } from "react-router-dom";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
-import Engineers from "./Engineers";
+import {
+    EngineerEngagingRecruiters,
+    EngineerResume,
+    EngineerInterviews,
+    EngineerCodeCamps,
+    EngineerNavBar,
+    EngineerIntro
+} from "./Engineers";
 import ContactMe from "./ContactMe";
 import NavBar from "./NavBar";
 import NotFound from "./NotFound";
@@ -21,25 +28,38 @@ const AppRouter = () => {
 
     return (
         <div className="app text-secondary">
+            <NavBar />
             <Switch location={location}>
                 <Route path="/" exact>
-                    <NavBar />
                     <Intro />
                 </Route>
                 <Route path="/about">
-                    <NavBar />
                     <AboutMe />
                 </Route>
                 <Route path="/projects">
-                    <NavBar />
                     <Projects />
                 </Route>
-                <Route path="/engineers">
-                    <NavBar />
-                    <Engineers />
+                <Route path={"/engineers/intro"} exact>
+                    <EngineerNavBar />
+                    <EngineerIntro />
+                </Route>
+                <Route path={"/engineers/code-camps"} exact>
+                    <EngineerNavBar />
+                    <EngineerCodeCamps />
+                </Route>
+                <Route path={"/engineers/resume"} exact>
+                    <EngineerNavBar />
+                    <EngineerResume />
+                </Route>
+                <Route path={"/engineers/recruiters"} exact>
+                    <EngineerNavBar />
+                    <EngineerEngagingRecruiters />
+                </Route>
+                <Route path={"/engineers/interviews"} exact>
+                    <EngineerNavBar />
+                    <EngineerInterviews />
                 </Route>
                 <Route path="/contact" exact>
-                    <NavBar />
                     <ContactMe />
                 </Route>
                 <Route component={NotFound} />
