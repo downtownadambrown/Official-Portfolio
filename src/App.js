@@ -26,15 +26,15 @@ const AppRouter = () => {
                     <NavBar />
                     <Intro />
                 </Route>
-                <Route path="/about" exact>
+                <Route path="/about">
                     <NavBar />
                     <AboutMe />
                 </Route>
-                <Route path="/projects" exact>
+                <Route path="/projects">
                     <NavBar />
                     <Projects />
                 </Route>
-                <Route path="/engineers" exact>
+                <Route path="/engineers">
                     <NavBar />
                     <Engineers />
                 </Route>

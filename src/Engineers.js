@@ -155,38 +155,34 @@ const EngineerInterviews = () => (
     </div>
 );
 
-const Engineers = () => {
-    let { path } = useRouteMatch();
-
-    return (
-        <div>
-            <div className="sub-navbar-container centered mb-3">
-                <NavBarItem label="Intro" route="/engineers/intro" first />
-                <NavBarItem label="Code Camps" route="/engineers/code-camps" />
-                <NavBarItem label="Resume" route="/engineers/resume" />
-                <NavBarItem label="Recruiters" route="/engineers/recruiters" />
-                <NavBarItem label="Interviews" route="/engineers/interviews" />
-            </div>
-            <Switch>
-                <Route path={`${path}/intro`}>
-                    <EngineerIntro />
-                </Route>
-                <Route path={`${path}/code-camps`}>
-                    <EngineerCodeCamps />
-                </Route>
-                <Route path={`${path}/resume`}>
-                    <EngineerResume />
-                </Route>
-                <Route path={`${path}/recruiters`}>
-                    <EngineerEngagingRecruiters />
-                </Route>
-                <Route path={`${path}/interviews`}>
-                    <EngineerInterviews />
-                </Route>
-            </Switch>
+const Engineers = () => (
+    <div>
+        <div className="sub-navbar-container centered mb-3">
+            <NavBarItem label="Intro" route="/engineers/intro" first />
+            <NavBarItem label="Code Camps" route="/engineers/code-camps" />
+            <NavBarItem label="Resume" route="/engineers/resume" />
+            <NavBarItem label="Recruiters" route="/engineers/recruiters" />
+            <NavBarItem label="Interviews" route="/engineers/interviews" />
         </div>
+        <Switch>
+            <Route path={"/engineers/intro"}>
+                <EngineerIntro />
+            </Route>
+            <Route path={"/engineers/code-camps"}>
+                <EngineerCodeCamps />
+            </Route>
+            <Route path={"/engineers/resume"}>
+                <EngineerResume />
+            </Route>
+            <Route path={"/engineers/recruiters"}>
+                <EngineerEngagingRecruiters />
+            </Route>
+            <Route path={"/engineers/interviews"}>
+                <EngineerInterviews />
+            </Route>
+        </Switch>
+    </div>
+);
 
-    );
-};
 
 export default Engineers;
