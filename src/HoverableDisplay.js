@@ -18,7 +18,7 @@ const HoverableDisplay = ({
     };
 
     return (
-        <div className={className} {...rest}>
+        <div className={className} onClick={handleCTAClick} {...rest}>
             <div className="hd-background" style={backgroundStyles}>
                 <div className="hd-display-over">
                     <div className="hd-hover">
@@ -38,7 +38,7 @@ const HoverableDisplay = ({
                                 />
                             ))}
                         </div>
-                        <div className="hd-cta" onClick={handleCTAClick}>
+                        <div className="hd-cta">
                             {ctaText}
                         </div>
                     </div>
