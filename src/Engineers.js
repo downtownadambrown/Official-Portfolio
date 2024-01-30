@@ -61,7 +61,6 @@ const EngineerResume = () => (
             <h3 className="font-weight-bold align-self-end">Your Resume:  Quick Wins</h3>
         </div>
         <p>One of the most popular inquiries I receive is in regards to resume assistance.  Here are some general guidelines that I follow when I am formatting someone else's resume, or when I am updating mine.</p>
-        <p><a href={adamResume} target="_blank" rel="noopener noreferrer">» Here is a link to what my Resume currently looks like «</a></p>
         <h5 className="font-weight-bold">My principles to showcasing your abilities in your resume:</h5>
         <ul>
             <li className="font-weight-bold">Traditional Education at the top (College or University)</li>
